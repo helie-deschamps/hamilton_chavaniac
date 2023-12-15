@@ -1,0 +1,67 @@
+.image-bandeau {
+    position: relative;
+    width: 100%;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.image-bandeau img {
+    width: 100%;
+    height: auto;
+    max-height: 150px;
+    display: block;
+    object-fit: cover;
+}
+
+.titre-billetterie {
+    position: absolute;
+    top: 40%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    font-family: Georgia, serif;
+    color: white; 
+
+    
+}
+
+.billet {
+    perspective: 1000px; /* Ajoute de la profondeur pour l'effet 3D */
+    width: 70em;
+}
+
+.billet div {
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;  /*Cache l'arrière de la carte quand elle n'est pas face à l'utilisateur */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+ 
+}
+
+.face-avant {
+    /* Styles pour la face avant */
+    z-index: 2;/* S'assure que la face avant est au-dessus de la face arrière initialement */
+    border: 1em red dashed;
+ }
+
+ .face-avant img {
+    width: 100%;
+}
+    
+
+.face-arriere {
+    transform: rotateY(180deg); /* Retourne la face arrière pour qu'elle soit cachée initialement */
+    z-index: 1; /* Sous la face avant initialement */
+    height: 100%;
+    background-color: white;
+}
+
+.billet:hover .face-avant {
+    transform: rotateY(-180deg); /* Retourne la face avant */
+}
+
+.billet:hover .face-arriere {
+    transform: rotateY(0deg); /* Retourne la face arrière */
+    z-index: -1;
+}
