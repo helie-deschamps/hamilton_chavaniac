@@ -26,6 +26,7 @@
 .billet {
     perspective: 1000px; /* Ajoute de la profondeur pour l'effet 3D */
     width: 70em;
+    height: calc(70em * 591 / 1772);
 }
 
 .billet div {
@@ -36,13 +37,11 @@
     top: 0;
     left: 0;
     width: 100%;
- 
 }
 
 .face-avant {
     /* Styles pour la face avant */
     z-index: 2;/* S'assure que la face avant est au-dessus de la face arrière initialement */
-    border: 1em red dashed;
  }
 
  .face-avant img {
@@ -63,5 +62,4 @@
 
 .billet:hover .face-arriere {
     transform: rotateY(0deg); /* Retourne la face arrière */
-    z-index: -1;
 }
