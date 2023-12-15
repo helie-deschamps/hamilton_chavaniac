@@ -1,8 +1,3 @@
-<?php
-include "header.html";
-?>
-
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -12,6 +7,9 @@ include "header.html";
     <link rel="stylesheet" type="text/css" href="style_billetterie.css">
 </head>
 <body>
+<?php
+include "header.html";
+?>
 <div class="image-bandeau">
     <img src="img/fond_2.jpg" alt="bandeau">
     <h1 class="titre-billetterie">Billetterie</h1>
