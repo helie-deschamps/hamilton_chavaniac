@@ -1,7 +1,7 @@
 <?php
 
-include_once '../users_class/User.php';
-include_once '../users_class/Reservation.php';
+include_once __DIR__ . '/../users_class/User.php';
+include_once __DIR__ . '/../users_class/Reservation.php';
 
 class DB
 {
@@ -97,7 +97,7 @@ class DB
      *
      * @return string|null Retourne la valeur du cookie si l'ajout réussit, sinon retourne null.
      */
-    public function addCookie(User $user) {
+    public function addCookie(User $user, bool $isSession = false) {
 
         $cookie = '';
 
@@ -110,8 +110,9 @@ class DB
         $userID = $user->id;
         $req = $this->PDO->prepare(
             "INSERT INTO `COOKIE` (`COOKIE`, `ID_UTILISATEUR`, `EXPIRATION`)
-                    SELECT :cookie, :userID, DATE_ADD(CURRENT_DATE, INTERVAL 395 DAY)
-                    WHERE NOT EXISTS (SELECT 1 FROM `COOKIE` WHERE `COOKIE` = :cookie);"
+                    SELECT :cookie, :userID, "
+                .($isSession ? "CURRENT_DATE " : "DATE_ADD(CURRENT_DATE, INTERVAL 395 DAY) ").
+                "WHERE NOT EXISTS (SELECT 1 FROM `COOKIE` WHERE `COOKIE` = :cookie);"
         );
         $req->bindParam(':cookie', $cookie);
         $req->bindParam(':userID', $userID, PDO::PARAM_INT);
@@ -122,16 +123,18 @@ class DB
      * Permet de récupérer un utilisateur à partir de son email et son mot de passe.
      *
      * @param string $cookie La valeur du cookie d'authentification de l'utilisateur.
+     * @param bool $isSession Indique si le cookie est un cookie de session ou non.
      *
      * @return User|null Retourne un objet User si un est trové, sinon retourne null.
      */
-    public function findUserByCookie(string $cookie) {
+    public function findUserByCookie(string $cookie, bool $isSession = false) {
         $req = $this->PDO->prepare(
             "SELECT UTILISATEUR.*
                     FROM UTILISATEUR
                     JOIN COOKIE ON UTILISATEUR.ID_UTILISATEUR = COOKIE.ID_UTILISATEUR
-                    WHERE COOKIE.COOKIE = :cookie AND COOKIE.EXPIRATION > NOW()
-                    LIMIT 1;"
+                    WHERE COOKIE.COOKIE = :cookie "
+                .($isSession ? "" : "AND COOKIE.EXPIRATION > NOW() ")
+                ."LIMIT 1;"
         );
         $req->bindParam(':cookie', $cookie);
         if($req->execute()  && $req->rowCount() > 0){

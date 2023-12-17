@@ -1,6 +1,6 @@
 <?php
 
-include_once 'Reservation.php';
+include_once __DIR__ . '/Reservation.php';
 
 class User
 {
