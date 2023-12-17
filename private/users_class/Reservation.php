@@ -1,14 +1,22 @@
 <?php
 
+include_once __DIR__ . '/Participants.php';
+
 class Reservation
 {
     //todo: crée cette classe
-    public $id;
+    public $participants;
+    public $dateOfReservation;
+    public $NameOfReservation;
 
     /**
-     * @param int $id L'identifiant de la réservation.
+     * @param Participants[] $participants Les participants à la réservation.
+     * @param string $dateOfReservation La date de la réservation.
+     * @param string $NameOfReservation Le nom asocié à la réservation.
      */
-    public function __construct(int $id) {
-        $this->id = $id;
+    public function __construct(array $participants, string $dateOfReservation, string $NameOfReservation) {
+        $this->participants = $participants;
+        $this->dateOfReservation = $dateOfReservation;
+        $this->NameOfReservation = $NameOfReservation;
     }
 }
