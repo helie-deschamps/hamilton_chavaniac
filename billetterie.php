@@ -9,7 +9,7 @@
 </head>
 <body>
 <?php
-include "header.html";
+include "header.php";
 ?>
 <div class="image-bandeau">
     <img src="img/bandeau-billetterie.png" alt="bandeau">

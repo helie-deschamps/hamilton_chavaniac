@@ -30,13 +30,7 @@ if(isset($_POST["username"]) && isset($_POST["icon_id"]) && isset($_POST["email"
 // si cnnection par mot de pass
 else if(isset($_POST["email"]) && isset($_POST["password"])) {
     $user = $auth->loginWithEmailPassword($_POST["email"], $_POST["password"], isset($_POST["cookieAccepted"]));
-}
-// si connection par cookie ou session
-else {
-    if (isset($_SESSION["connsessco"])) {
-        $user = $auth->loginWithSession($_SESSION["connsessco"]);
-    }
-    else if (isset($_COOKIE["conncusr"])) {
-        $user = $auth->loginWithCookie($_COOKIE["conncusr"]);
+    if(!$user){
+        die("Email ou mot de passe incorrect");
     }
 }
