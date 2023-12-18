@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const prevButton = document.querySelector('.carousel-button.prev');
     let currentIndex = 0;
     const visibleSlides = 5; // Nombre de diapositives à afficher à la fois
-    const slideWidth = slides[0].offsetWidth + 30; 
+    const slideWidth = slides[0].offsetWidth + 30;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
 
     // Déplacer le carrousel
     const moveToSlide = (track, currentIndex) => {
