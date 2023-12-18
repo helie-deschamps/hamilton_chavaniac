@@ -75,3 +75,11 @@ $user = new User( 1, "mail", null, "esperida", 1);
         </form>
     </div>
 </dialog>
+<dialog id="notification_modal" class="minified_modal">
+    <div id="notification_infos">
+        Bonjour, vous avez 1 pré-réservation en cours.
+    </div>
+    <div>
+        <button id="notification_modal_close">Fermer</button>
+    </div>
+</dialog>

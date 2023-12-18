@@ -76,3 +76,35 @@ header a {
     padding: 2em;
     border-radius: .5em;
 }
+
+#notification_modal {
+    position: fixed;
+    margin: 0;
+    z-index: 10;
+    left: 50%;
+    top: -4em;
+    transform: translate(-50%, 10em) scale(1);
+    padding: 1em 2em;
+    border-radius: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: black;
+    color: white;
+    flex-direction: column;
+    transition: transform .15s ease-out;
+    border: none;
+}
+#notification_modal button {
+    text-decoration: underline;
+    background: none;
+    color: white;
+    border: none;
+    font-weight: bold;
+}
+#notification_modal.alertnotif {
+    color: rgb(215, 151, 151);
+}
+.minified_modal {
+    transform: translate(-50%, -50%) scale(0) !important;
+}
