@@ -4,7 +4,6 @@ include_once __DIR__ . '/Participants.php';
 
 class Reservation
 {
-    //todo: crée cette classe
     public $participants;
     public $dateOfReservation;
     public $NameOfReservation;
