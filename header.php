@@ -15,7 +15,7 @@ $user = new User( 1, "mail", null, "esperida", 1);
         <a href="/spectacle">Spectacle</a>
         <a href="/samc">SAMC</a>
     </span>
-    <img src="logo Hamilton.png" alt="logo">
+    <img src="img/logo1.png" alt="logo">
     <span id="right-header">
         <a href="/billetterie">Billeterie</a>
         <span id="connexion">

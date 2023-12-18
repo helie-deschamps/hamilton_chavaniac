@@ -10,7 +10,7 @@
 <body>
    
 <?php
-include "header.html";
+include "header.php";
 ?>
     <h1>Hamilton, la comédie musicale</h1>
 
