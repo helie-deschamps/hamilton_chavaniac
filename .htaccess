@@ -1,0 +1,4 @@
+RewriteEngine on
+
+# Si l'url n'as pas d'extention, la completer par completer par .php
+RewriteRule ^([a-zA-Z_]+(\/[a-zA-Z_]+)*)$ $1.php
