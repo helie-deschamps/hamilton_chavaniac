@@ -6,6 +6,13 @@ header {
     font-weight: bold;
 }
 
+header > img {
+    width: 6em;
+    position: absolute;
+    right: 50%;
+    transform: translate(50%, -.78em);
+}
+
 header a {
     color: rgb(240, 195, 0);
     text-decoration: none;
