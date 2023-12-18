@@ -1,8 +1,3 @@
-<?php
-include_once __DIR__ . '/private/users_class/User.php';
-$user = new User( 1, "mail", null, "esperida", 1);
-?>
-
 <link rel="stylesheet" href="styles/fonts.css">
 <link rel="stylesheet" href="styles/header.css">
 
@@ -18,15 +13,16 @@ $user = new User( 1, "mail", null, "esperida", 1);
     <img src="img/logo1.png" alt="logo">
     <span id="right-header">
         <a href="/billetterie">Billeterie</a>
-        <span id="connexion">
-            <?php if($user): ?>
+        <span id="connexion" class="<?= $user ? "connected" : "disconnected" ?>">
+            <div class="data_user">
                 <button>Ma pré-réservation</button>
                 <button>
                     <img id="user_icon" src="/img/users_icons/<?= $user->code_icone ?? "" ?>.png" alt="icon de <?= $user->username ?? "" ?>">
                 </button>
-            <?php else: ?>
+            </div>
+            <div class="button_connection">
                 <button>Me connecter</button>
-            <?php endif; ?>
+            </div>
         </span>
     </span>
 

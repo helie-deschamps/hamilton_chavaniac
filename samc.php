@@ -1,7 +1,6 @@
 <?php
-include "header.html";
+include_once __DIR__ . '/private/authentication_systeme/try_auto_connection.php';
 ?>
-
 <!DOCTYPE html>
 <html lang="fr">
 

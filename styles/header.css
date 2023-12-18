@@ -28,7 +28,7 @@ header a {
     border-radius: 1.2em;
 }
 
-#right-header, #left-header, #connexion {
+#right-header, #left-header, .data_user, .button_connection {
     display: flex;
     align-items: center;
 }
@@ -44,6 +44,12 @@ header a {
     background: rgb(240, 195, 0);
     padding: .2em 1em;
     border-radius: .5em;
+}
+#connexion.connected .button_connection {
+    display: none;
+}
+#connexion.disconnected .data_user {
+    display: none;
 }
 #connexion button {
     border: none;
