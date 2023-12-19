@@ -46,7 +46,7 @@ function submitConnectForm(formData) {
         if (xhttp.status >= 200 && xhttp.status < 300) {
             var rep = xhttp.responseText
             try {
-                connection(JSON.parse(rep))
+                connection(JSON.parse(JSON.parse(rep)))
             } catch (e) {
                 pushNotif(`La connection a échoué. ${rep}`, true)
             }
@@ -66,9 +66,8 @@ connection = function(user){
     buttonConnection.classList.remove('disconnected')
     modal.classList.add('connected')
     modal.classList.remove('disconnected')
-    document.getElementById('user_icon').src = `/img/users_icons/${user.code_icone}.png`
+    document.getElementById('user_icon').src=`/img/users_icons/${user.code_icone}.png`
     document.getElementById('user_icon').alt=`icon de ${user.username}`
-    console.log(user)
 }
 disconnection = function(){
     buttonConnection.classList.remove('connected')
