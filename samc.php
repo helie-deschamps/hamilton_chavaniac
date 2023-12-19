@@ -41,11 +41,11 @@ include "header.php";
                 préservation du château de La Fayette. Ce soutien financier contribuera à maintenir et à Frestaurer ce
                 site historique, assurant ainsi sa pérennité pour les générations futures. Les 25% des finances
                 restantes serviront à assurer la pérennité de l'association SAMC.</p>
-                <img src="" alt="">
-                <img src="" alt="">
-                <img src="" alt="">
-            <h3>Dons</h3>
-            <button> Faites un dons</button>
+                <div class="imgfinance">
+                <img src="img/financement1.jpg" alt="Chateau La Fayette">
+                <img src="img/financement2.jpg" alt="Chateau La Fayette">
+                <img src="img/financement3.jpg" alt="Chateau La Fayette">
+            </div>
             <h3>Cagnotte</h3>
         </div>
         <div id="progress-container">

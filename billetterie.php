@@ -1,5 +1,5 @@
 <?php
-include_once __DIR__ . '/private/authentication_systeme/try_auto_connection.php';
+//include_once __DIR__ . '/private/authentication_systeme/try_auto_connection.php';
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -10,10 +10,10 @@ include_once __DIR__ . '/private/authentication_systeme/try_auto_connection.php'
     <link rel="stylesheet" type="text/css" href="styles/fonts.css">
     <link rel="stylesheet" type="text/css" href="styles/style_billetterie.css">
 </head>
-<body>
 <?php
-include "header.php";
+    include 'header.php'
 ?>
+<body>
 <div class="image-bandeau">
     <img src="img/bandeau-billetterie.png" alt="bandeau">
 </div>
