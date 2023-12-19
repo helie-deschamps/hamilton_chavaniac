@@ -1,5 +1,5 @@
 <?php
-//include_once __DIR__ . '/private/authentication_systeme/try_auto_connection.php';
+include_once __DIR__ . '/private/authentication_systeme/try_auto_connection.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,7 +13,7 @@
 <body>
    
 <?php
-//include "header.php";
+include "header.php";
 ?>
     <h1>Hamilton, la comédie musicale</h1>
 
