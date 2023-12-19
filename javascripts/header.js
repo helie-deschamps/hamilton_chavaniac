@@ -75,7 +75,11 @@ disconnection = function(){
     buttonConnection.classList.add('disconnected')
     modal.classList.remove('connected')
     modal.classList.add('disconnected')
-    document.cookie = `connsessco=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`
-    document.cookie = `conncusr=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`
-    pushNotif("Vous avez été déconnecté")
+    document.cookie = `conncusr=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=;`
+    var xhttp = new XMLHttpRequest();
+    xhttp.open('GET','session_destroyer.php', true);
+    xhttp.onreadystatechange=()=>{
+        if (xhttp.readyState==4&&xhttp.status==200)pushNotif("Vous avez été déconnecté")
+    }
+    xhttp.send(null)
 }
