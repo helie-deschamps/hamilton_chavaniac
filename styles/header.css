@@ -78,9 +78,10 @@ header a {
     top: 50%;
     transform: translate(-50%, -50%);
     overflow: auto;
-    background: rgb(240, 195, 0);
+    background: rgb(255, 253, 238);
     padding: 2em;
     border-radius: .5em;
+    max-height: 90vh;
 }
 
 #notification_modal {
@@ -146,4 +147,75 @@ header a {
     to {
         transform: translate(-50%, -50%) scale(1);
     }
+}
+
+
+
+#forms-conner {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+}
+#forms-conner input[type="submit"] {
+    margin-left: auto;
+    display: block;
+ }
+#forms-conner h4 {
+    text-align: center;
+}
+#forms-conner > form {
+    padding: 1.8em 2em;
+    overflow: scroll;
+    flex: 1;
+}
+#forms-conner form > div:not(.cookies_cb_div) label {
+    font-weight: bold;
+    margin-right: .5em;
+}
+#forms-conner input {
+    flex-grow: 1;
+}
+#forms-conner div:not(.cookies_cb_div) {
+    margin: 1em 0;
+    display: flex;
+    align-items: center;
+}
+.cookies_cb_div input {
+    flex-grow: 0;
+    margin-right: 1em;
+}
+input[type="text"], input[type="password"], input[type="email"] {
+    background: none;
+    border: black solid .35em;
+    border-radius: 2em;
+    padding: .2em 1.2em;
+}
+input[type="checkbox"] {
+    appearance: none;
+    width: 1.05em;
+    height: 1em;
+    background: none;
+    border: black solid .2em;
+    border-radius: .2em;
+    margin: 0 .5em 0 0;
+}
+input[type="checkbox"]:checked {
+    background: black;
+}
+input[type="submit"] {
+    background: black;
+    color: white;
+    border: none;
+    border-radius: 2em;
+    padding: .8em 1.4em;
+}
+input[type="submit"]:hover {
+    cursor: pointer;
+    background: rgb(58, 53, 53);
+}
+input:invalid {
+    border-color: #a10808;
+}
+input:valid {
+    border-color: #3c6c09;
 }
