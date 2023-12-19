@@ -13,6 +13,9 @@ include_once __DIR__ . '/private/authentication_systeme/try_auto_connection.php'
 </head>
 
 <body>
+<?php
+include "header.php";
+?>
     <div class="presentation">
         <h1>Présentation</h1>
         <p>La SAMC, Société des Amis du Musée Crozatier, réunit passionnés et curieux de l'Art ancien, moderne et

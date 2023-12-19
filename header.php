@@ -13,11 +13,11 @@
     <img src="img/logo1.png" alt="logo">
     <span id="right-header">
         <a href="/billetterie">Billeterie</a>
-        <span id="connexion" class="<?= $user ? "connected" : "disconnected" ?>">
+        <span id="connexion" class="<?= isset($user) && $user ? "connected" : "disconnected" ?>">
             <div class="data_user">
                 <button>Ma pré-réservation</button>
                 <button>
-                    <img id="user_icon" src="/img/users_icons/<?= $user->code_icone ?? "" ?>.png" alt="icon de <?= $user->username ?? "" ?>">
+                    <img id="user_icon" src="/img/users_icons/<?= $user?->code_icone ?? "" ?>.png" alt="icon de <?= $user->username ?? "" ?>">
                 </button>
             </div>
             <div class="button_connection">
@@ -30,10 +30,11 @@
 
 <div id="connection_modal-background">
 </div>
-<dialog id="connection_modal">
+<dialog id="connection_modal" class="<?= isset($user) && $user ? "connected" : "disconnected" ?>">
     <div id="connection_infos">
+        UwU
     </div>
-    <div>
+    <div id="forms-conner">
         <form id="form-conn" method="post">
             <div>
                 <label for="emaila1">Email</label>

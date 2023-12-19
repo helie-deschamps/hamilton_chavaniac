@@ -59,9 +59,19 @@ function submitConnectForm(formData) {
 }
 
 connection = function(user){
-    console.log(user)
     buttonConnection.classList.add('connected')
     buttonConnection.classList.remove('disconnected')
+    modal.classList.add('connected')
+    modal.classList.remove('disconnected')
     document.getElementById('user_icon').src = `/img/users_icons/${user.code_icone}.png`
     document.getElementById('user_icon').alt=`icon de ${user.username}`
+}
+disconnection = function(){
+    buttonConnection.classList.remove('connected')
+    buttonConnection.classList.add('disconnected')
+    modal.classList.remove('connected')
+    modal.classList.add('disconnected')
+    document.cookie = `connsessco=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`
+    document.cookie = `conncusr=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`
+    pushNotif("Vous avez été déconnecté")
 }
