@@ -57,7 +57,7 @@ class Reservation
      * exemple:
      * [ [ 12.5, 2 ], [ 10, 1 ], [ 7, 2 ] ]
      */
-    public function tableauDePrix($inJSON = false): false|string
+    public function tableauDePrix($inJSON = false): array|string
     {
         // trie les participant par prix dans un nouveau tableau du modele [ [ prix (float), nombre de participants a ce prix (int) ], ... ]
         $participantsTrie = [];
