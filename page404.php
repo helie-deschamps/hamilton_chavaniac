@@ -1,17 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/page404.css">
-    <title>Page Erreur</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('img/page-404.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+        }
+        @font-face {
+    font-family: 'MaPolicePersonnalisée';
+    src: url('fonts/HOMINIS.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+    }
+
+    .titre-erreur {
+        font-family: 'MaPolicePersonnalisée';
+        
+
+    }
+
+    </style>
 </head>
 <?php
-    include 'header.php'
+include 'header.php'
 ?>
 <body>
-    <h1 class="titre-erreur">404</h1>
-    
+    <div class="Page-erreur">
+        <h1 class="titre-erreur">404</h1>
 </body>
 </html>
