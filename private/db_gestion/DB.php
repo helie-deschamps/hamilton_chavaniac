@@ -64,7 +64,8 @@ class DB
      *
      * @return User|null Retourne un objet User si l'authentification réussit, sinon retourne null.
      */
-    public function findUserByPassword(string $email, string $password) {
+    public function findUserByPassword(string $email, string $password): ?User
+    {
         $hashedPassword = hash('sha256', $password);
 
         $req = $this->PDO->prepare(
@@ -76,9 +77,7 @@ class DB
         $req->bindParam(':password', $hashedPassword);
         if($req->execute()  && $req->rowCount() > 0){
             $res = $req->fetch(PDO::FETCH_ASSOC);
-            $reservation = $res["ID_RESERVATION"] != null ?
-                new Reservation($res["ID_RESERVATION"]) :
-                null;
+            $reservation = $this->findReservationFromUserID($res["ID_UTILISATEUR"]);
             return new User(
                 $res["ID_UTILISATEUR"],
                 $res["EMAIL"],
@@ -97,7 +96,8 @@ class DB
      *
      * @return string|null Retourne la valeur du cookie si l'ajout réussit, sinon retourne null.
      */
-    public function addCookie(User $user, bool $isSession = false) {
+    public function addCookie(User $user, bool $isSession = false): ?string
+    {
 
         $cookie = '';
 
@@ -139,9 +139,7 @@ class DB
         $req->bindParam(':cookie', $cookie);
         if($req->execute()  && $req->rowCount() > 0){
             $res = $req->fetch(PDO::FETCH_ASSOC);
-            $reservation = $res["ID_RESERVATION"] != null ?
-                new Reservation($res["ID_RESERVATION"]) :
-                null;
+            $reservation = $this->findReservationFromUserID($res["ID_UTILISATEUR"]);
             return new User(
                 $res["ID_UTILISATEUR"],
                 $res["EMAIL"],
@@ -149,6 +147,39 @@ class DB
                 $res["USERNAME"],
                 $res["CODE_ICONE"],
             );
+        }
+        else return null;
+    }
+
+    /**
+     * Permet de récupérer une réservation associé à un utilisateur via son ID.
+     *
+     * @param string $userID L'identifiant de l'utilisateur dont on veut la réservation
+     *
+     * @return Reservation|null Retourne un objet User si un est trové, sinon retourne null.
+     */
+    public function findReservationFromUserID(string $userID) {
+        $req = $this->PDO->prepare(
+            "SELECT
+    RESERVATION.DATE_DE_RESERVATION,
+    RESERVATION.ID_RESERVATION,
+    PARTICIPANT.TARIF
+FROM
+    RESERVATION
+INNER JOIN
+    PARTICIPANT ON
+        RESERVATION.ID_RESERVATION = PARTICIPANT.ID_RESERVATION
+WHERE
+    RESERVATION.ID_UTILISATEUR = :userID;"
+        );
+        $req->bindParam(':userID', $userID, PDO::PARAM_INT);
+        if($req->execute()  && $req->rowCount() > 0){
+            $res = $req->fetchAll(PDO::FETCH_ASSOC);
+            $reservation = new Reservation($res[0]["DATE_DE_RESERVATION"], $res[0]["ID_RESERVATION"]);
+            foreach ($res as $participant) {
+                $reservation->addParticipant($participant["TARIF"]);
+            }
+            return $reservation;
         }
         else return null;
     }

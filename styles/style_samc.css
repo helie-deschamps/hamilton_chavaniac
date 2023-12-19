@@ -49,3 +49,8 @@ body {
     margin: 20px; /* Ajoutez une marge entre les sections pour plus d'espace */
 }
 
+.imgfinance img{
+    width: auto;
+    height:200px;
+    margin: 10px;
+}
