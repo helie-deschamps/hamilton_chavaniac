@@ -49,4 +49,11 @@ class User
         $this->username = $username;
         $this->code_icone = $code_icone;
     }
+
+    public function JSONify() {
+        // crée une copie modifiable de this
+        $this2 = json_decode(json_encode($this));
+        $this2->reservation = is_null($this2->reservation) ? null : $this->reservation->tableauDePrix();
+        return json_encode($this2);
+    }
 }

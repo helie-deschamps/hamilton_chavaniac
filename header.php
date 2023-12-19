@@ -17,7 +17,7 @@
             <div class="data_user">
                 <button>Ma pré-réservation</button>
                 <button>
-                    <img id="user_icon" src="/img/users_icons/<?= $user?->code_icone ?? "" ?>.png" alt="icon de <?= $user->username ?? "" ?>">
+                    <img id="user_icon" src="/img/users_icons/<?= isset($user) && $user ? $user->code_icone : "" ?>.png" alt="icon de <?= $user->username ?? "" ?>">
                 </button>
             </div>
             <div class="button_connection">
