@@ -3,8 +3,10 @@ var modalBackground = document.getElementById("connection_modal-background")
 var modalNotif = document.getElementById("notification_modal")
 var modalNotifContent = document.getElementById("notification_infos")
 var buttonConnection= document.getElementById("connexion")
+var modalNotifTimer
 document.getElementById("notification_modal_close").addEventListener("click", function(){
     modalNotif.classList.add('minified_modal')
+    console.log(modalNotifTimer)
 })
 pushNotif = function(content, isAlert){
     modalNotif.classList.remove('minified_modal')
@@ -17,6 +19,8 @@ pushNotif = function(content, isAlert){
     else{
         modalNotif.classList.remove('alertnotif')
     }
+    if (modalNotifTimer) clearTimeout(modalNotifTimer)
+    modalNotifTimer = setTimeout(()=>modalNotif.classList.add('minified_modal'),12000)
 }
 modalBackground.addEventListener("click", function(){
     modal.style.display = "none"
