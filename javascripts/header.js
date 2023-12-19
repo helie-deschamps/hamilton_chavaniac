@@ -6,7 +6,6 @@ var buttonConnection= document.getElementById("connexion")
 var modalNotifTimer
 document.getElementById("notification_modal_close").addEventListener("click", function(){
     modalNotif.classList.add('minified_modal')
-    console.log(modalNotifTimer)
 })
 pushNotif = function(content, isAlert){
     modalNotif.classList.remove('minified_modal')
@@ -69,6 +68,7 @@ connection = function(user){
     modal.classList.remove('disconnected')
     document.getElementById('user_icon').src = `/img/users_icons/${user.code_icone}.png`
     document.getElementById('user_icon').alt=`icon de ${user.username}`
+    console.log(user)
 }
 disconnection = function(){
     buttonConnection.classList.remove('connected')
