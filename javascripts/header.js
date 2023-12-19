@@ -46,6 +46,7 @@ function submitConnectForm(formData) {
         if (xhttp.status >= 200 && xhttp.status < 300) {
             var rep = xhttp.responseText
             try {
+                // le premier JSON.parse est pour convertir le string en JSON (en suppriment les \ d'echaments) et le deuxième pour convertir le JSON en objet
                 connection(JSON.parse(JSON.parse(rep)))
             } catch (e) {
                 pushNotif(`La connection a échoué. ${rep}`, true)
