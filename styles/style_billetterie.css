@@ -34,7 +34,7 @@ body {
 }
 
 .billet {
-    perspective: 1000px; /* Ajoute de la profondeur pour l'effet 3D */
+    perspective: 1000px; 
     width: 70em;
     height: calc(70em * 591 / 1772);
 }
@@ -57,7 +57,7 @@ body {
 .billet > div {
     transition: transform 0.6s;
     transform-style: preserve-3d;
-    backface-visibility: hidden;  /*Cache l'arrière de la carte quand elle n'est pas face à l'utilisateur */
+    backface-visibility: hidden; 
     position: absolute;
     top: 0;
     left: 0;
@@ -65,8 +65,7 @@ body {
 }
 
 .face-avant {
-    /* Styles pour la face avant */
-    z-index: 2;/* S'assure que la face avant est au-dessus de la face arrière initialement */
+    z-index: 2;
  }
 
  .face-avant img {
@@ -75,8 +74,8 @@ body {
     
 
 .face-arriere {
-    transform: rotateY(180deg); /* Retourne la face arrière pour qu'elle soit cachée initialement */
-    z-index: 1; /* Sous la face avant initialement */
+    transform: rotateY(180deg);
+    z-index: 1; 
     height: 100%;
     background-color: rgb(197, 197, 197);
     display: flex;
@@ -98,7 +97,7 @@ body {
 }
 
 .quantity-btn {
-    background-color: #FFD700; /* Couleur jaune */
+    background-color: #FFD700; 
     color: black;
     border: none;
     padding: 10px 20px;
@@ -109,11 +108,11 @@ body {
 }
 
 .quantity-btn:first-child{
-    border-radius: 50% 0 0 50%; /* Légèrement arrondi */
+    border-radius: 50% 0 0 50%; 
 }
 
 .quantity-btn:last-child{
-    border-radius: 0 50% 50% 0; /* Légèrement arrondi */
+    border-radius: 0 50% 50% 0; 
 }
 
 .quantity-input {
@@ -127,32 +126,30 @@ body {
 }
 
 .add-to-cart-btn {
-    background-color: #FFD700; /* Couleur jaune */
+    background-color: #FFD700; 
     color: black;
     border: none;
     padding: 15px 30px;
     font-size: 1.25rem;
-    border-radius: 50px; /* Très arrondi */
+    border-radius: 50px; 
     cursor: pointer;
     outline: none;
-    margin-top: 10px; /* Espace au-dessus du bouton */
-    display: block; /* Assure que le bouton soit centré si besoin */
-    width: 100%; /* Pleine largeur */
-    box-sizing: border-box; /* Assure que padding n'augmente pas la largeur */
-    text-transform: uppercase; /* Lettres majuscules */
+    margin-top: 10px; 
+    display: block; 
+    width: 100%; 
+    box-sizing: border-box; 
+    text-transform: uppercase; 
     font-weight: bold;
 }
 
-/* Styles pour les interactions avec le bouton */
 .quantity-btn:hover, .add-to-cart-btn:hover {
-    background-color: #FFA500; /* Couleur orange au survol */
+    background-color: #FFA500; 
 }
 
 .quantity-btn:active, .add-to-cart-btn:active {
-    background-color: #E6AC00; /* Couleur orange foncé au clic */
+    background-color: #E6AC00; 
 }
 
-/* Désactiver la possibilité de changer la quantité via le clavier */
 .quantity-input {
     pointer-events: none;
 }
@@ -173,11 +170,11 @@ body {
 }
 
 .billet:hover .face-avant {
-    transform: rotateY(-180deg); /* Retourne la face avant */
+    transform: rotateY(-180deg); 
 }
 
 .billet:hover .face-arriere {
-    transform: rotateY(0deg); /* Retourne la face arrière */
+    transform: rotateY(0deg); 
 }
 
 
