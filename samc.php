@@ -23,7 +23,7 @@ include "header.php";
             redécouvrir ses riches collections. Inspirée par Nietzsche, la SAMC célèbre la mémoire longue comme clé pour
             penser l'avenir, offrant ainsi une passerelle entre le passé et le présent.
         </p>
-        carousel
+
 
         <div class="projet">
             <h1>Notre Projet</h1>
@@ -41,6 +41,9 @@ include "header.php";
                 préservation du château de La Fayette. Ce soutien financier contribuera à maintenir et à Frestaurer ce
                 site historique, assurant ainsi sa pérennité pour les générations futures. Les 25% des finances
                 restantes serviront à assurer la pérennité de l'association SAMC.</p>
+                <img src="" alt="">
+                <img src="" alt="">
+                <img src="" alt="">
             <h3>Dons</h3>
             <button> Faites un dons</button>
             <h3>Cagnotte</h3>
