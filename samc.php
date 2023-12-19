@@ -13,6 +13,9 @@ include_once __DIR__ . '/private/authentication_systeme/try_auto_connection.php'
 </head>
 
 <body>
+<?php
+include "header.php";
+?>
     <div class="presentation">
         <h1>Présentation</h1>
         <p>La SAMC, Société des Amis du Musée Crozatier, réunit passionnés et curieux de l'Art ancien, moderne et
@@ -20,7 +23,7 @@ include_once __DIR__ . '/private/authentication_systeme/try_auto_connection.php'
             redécouvrir ses riches collections. Inspirée par Nietzsche, la SAMC célèbre la mémoire longue comme clé pour
             penser l'avenir, offrant ainsi une passerelle entre le passé et le présent.
         </p>
-        carousel
+
 
         <div class="projet">
             <h1>Notre Projet</h1>
@@ -38,8 +41,11 @@ include_once __DIR__ . '/private/authentication_systeme/try_auto_connection.php'
                 préservation du château de La Fayette. Ce soutien financier contribuera à maintenir et à Frestaurer ce
                 site historique, assurant ainsi sa pérennité pour les générations futures. Les 25% des finances
                 restantes serviront à assurer la pérennité de l'association SAMC.</p>
-            <h3>Dons</h3>
-            <button> Faites un dons</button>
+                <div class="imgfinance">
+                <img src="img/financement1.jpg" alt="Chateau La Fayette">
+                <img src="img/financement2.jpg" alt="Chateau La Fayette">
+                <img src="img/financement3.jpg" alt="Chateau La Fayette">
+            </div>
             <h3>Cagnotte</h3>
         </div>
         <div id="progress-container">

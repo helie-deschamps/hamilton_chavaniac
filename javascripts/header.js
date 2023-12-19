@@ -3,8 +3,10 @@ var modalBackground = document.getElementById("connection_modal-background")
 var modalNotif = document.getElementById("notification_modal")
 var modalNotifContent = document.getElementById("notification_infos")
 var buttonConnection= document.getElementById("connexion")
+var modalNotifTimer
 document.getElementById("notification_modal_close").addEventListener("click", function(){
     modalNotif.classList.add('minified_modal')
+    console.log(modalNotifTimer)
 })
 pushNotif = function(content, isAlert){
     modalNotif.classList.remove('minified_modal')
@@ -17,6 +19,8 @@ pushNotif = function(content, isAlert){
     else{
         modalNotif.classList.remove('alertnotif')
     }
+    if (modalNotifTimer) clearTimeout(modalNotifTimer)
+    modalNotifTimer = setTimeout(()=>modalNotif.classList.add('minified_modal'),12000)
 }
 modalBackground.addEventListener("click", function(){
     modal.style.display = "none"
@@ -59,9 +63,19 @@ function submitConnectForm(formData) {
 }
 
 connection = function(user){
-    console.log(user)
     buttonConnection.classList.add('connected')
     buttonConnection.classList.remove('disconnected')
+    modal.classList.add('connected')
+    modal.classList.remove('disconnected')
     document.getElementById('user_icon').src = `/img/users_icons/${user.code_icone}.png`
     document.getElementById('user_icon').alt=`icon de ${user.username}`
+}
+disconnection = function(){
+    buttonConnection.classList.remove('connected')
+    buttonConnection.classList.add('disconnected')
+    modal.classList.remove('connected')
+    modal.classList.add('disconnected')
+    document.cookie = `connsessco=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`
+    document.cookie = `conncusr=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`
+    pushNotif("Vous avez été déconnecté")
 }
