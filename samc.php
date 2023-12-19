@@ -99,9 +99,9 @@ include "header.php";
             site historique, assurant ainsi sa pérennité pour les générations futures. Les 25% des finances
             restantes serviront à assurer la pérennité de l'association SAMC.</p>
         <div class="imgfinance">
-            <img src="img/financement1.jpg" alt="Chateau La Fayette">
-            <img src="img/financement2.jpg" alt="Chateau La Fayette">
-            <img src="img/financement3.jpg" alt="Chateau La Fayette">
+            <img src="img/financement1.webp" alt="Chateau La Fayette">
+            <img src="img/financement2.webp" alt="Chateau La Fayette">
+            <img src="img/financement3.webp" alt="Chateau La Fayette">
         </div>
         <h3>Cagnotte</h3>
     </div>
