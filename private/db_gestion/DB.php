@@ -139,7 +139,7 @@ class DB
         $req->bindParam(':cookie', $cookie);
         if($req->execute()  && $req->rowCount() > 0){
             $res = $req->fetch(PDO::FETCH_ASSOC);
-            $reservation = $this->findReservationFromUserID();
+            $reservation = $this->findReservationFromUserID($res["ID_UTILISATEUR"]);
             return new User(
                 $res["ID_UTILISATEUR"],
                 $res["EMAIL"],
