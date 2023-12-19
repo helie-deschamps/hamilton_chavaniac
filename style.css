@@ -1,36 +1,61 @@
 .carousel {
     overflow: hidden;
     position: relative;
-    width: 100%; 
+    width: 100%; /* prend la largeur totale de son conteneur */
     display: flex;
-    justify-content: center; 
-    background-color: #FFF8DC; 
+    justify-content: center; /* centre les éléments horizontalement */
+    align-items: center; /* centre les éléments verticalement */
+    background-color: #FFF8DC; /* la couleur de fond doit correspondre à votre design */
 }
 
 .carousel-track-container {
     display: flex;
     flex-wrap: nowrap;
-    overflow: hidden; 
-    justify-content: start; 
+    overflow: hidden; /* masque les éléments qui dépassent */
+    justify-content: center; /* aligne les éléments au centre du conteneur */
+    position: relative; /* positionne par rapport au carrousel */
 }
 
 .carousel-track {
     display: flex;
+    flex-wrap: nowrap;
     transition: transform 0.5s ease-in-out;
+    justify-content: flex-start; /* aligne les éléments au début du carrousel */
 }
 
 .carousel-slide {
-    flex: 0 0 auto; 
-    width: 200px; 
-    height: 200px; 
+    flex: 0 0 auto; /* les éléments ne grandissent pas, ne rétrécissent pas et sont basés sur la largeur automatique */
+    width: 200px; /* largeur de chaque slide */
+    height: 200px; /* hauteur pour un cercle parfait */
     margin: 15px;
-    border-radius: 50%; 
+    border-radius: 50%; /* pour rendre le slide rond */
     overflow: hidden;
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 iframe {
-    border-radius: 50%; 
+    border-radius: 50%; /* rend l'iframe rond */
+    width: 100%; /* la largeur de l'iframe s'ajuste à celle du slide */
+    height: 100%; /* la hauteur de l'iframe s'ajuste à celle du slide */
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 100;
+}
+
+.carousel-button.prev {
+    left: 10px;
+}
+
+.carousel-button.next {
+    right: 10px;
 }
