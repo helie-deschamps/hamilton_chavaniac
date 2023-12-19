@@ -46,7 +46,8 @@ function submitConnectForm(formData) {
         if (xhttp.status >= 200 && xhttp.status < 300) {
             var rep = xhttp.responseText
             try {
-                connection(JSON.parse(rep))
+                // le premier JSON.parse est pour convertir le string en JSON (en suppriment les \ d'echaments) et le deuxième pour convertir le JSON en objet
+                connection(JSON.parse(JSON.parse(rep)))
             } catch (e) {
                 pushNotif(`La connection a échoué. ${rep}`, true)
             }
@@ -66,16 +67,19 @@ connection = function(user){
     buttonConnection.classList.remove('disconnected')
     modal.classList.add('connected')
     modal.classList.remove('disconnected')
-    document.getElementById('user_icon').src = `/img/users_icons/${user.code_icone}.png`
+    document.getElementById('user_icon').src=`/img/users_icons/${user.code_icone}.png`
     document.getElementById('user_icon').alt=`icon de ${user.username}`
-    console.log(user)
 }
 disconnection = function(){
     buttonConnection.classList.remove('connected')
     buttonConnection.classList.add('disconnected')
     modal.classList.remove('connected')
     modal.classList.add('disconnected')
-    document.cookie = `connsessco=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`
-    document.cookie = `conncusr=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`
-    pushNotif("Vous avez été déconnecté")
+    document.cookie = `conncusr=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=;`
+    var xhttp = new XMLHttpRequest();
+    xhttp.open('GET','session_destroyer.php', true);
+    xhttp.onreadystatechange=()=>{
+        if (xhttp.readyState==4&&xhttp.status==200)pushNotif("Vous avez été déconnecté")
+    }
+    xhttp.send(null)
 }

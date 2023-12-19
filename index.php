@@ -1,5 +1,5 @@
 <?php
-include_once __DIR__ . '/private/authentication_systeme/try_auto_connection.php';
+//include_once __DIR__ . '/private/authentication_systeme/try_auto_connection.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,7 +13,7 @@ include_once __DIR__ . '/private/authentication_systeme/try_auto_connection.php'
 <body>
    
 <?php
-include "header.php";
+//include "header.php";
 ?>
     <h1>Hamilton, la comédie musicale</h1>
 
@@ -59,7 +59,7 @@ include "header.php";
 
     <p>biuezgkqhjvdhizhd</p>
 
-    <iframe id="vidéotrailer" width="" height="" src="">  </iframe>
+    <iframe width="919" height="517" src="https://www.youtube.com/embed/DSCKfXpAGHc" title="Hamilton | Official Trailer | Disney+" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
      
     <footer>
     </footer>
