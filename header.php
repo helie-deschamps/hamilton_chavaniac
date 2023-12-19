@@ -10,7 +10,7 @@
         <a href="/spectacle">Spectacle</a>
         <a href="/samc">SAMC</a>
     </span>
-    <img src="img/logo1.png" alt="logo">
+    <img src="img/logo1.webp" alt="logo">
     <span id="right-header">
         <a href="/billetterie">Billeterie</a>
         <span id="connexion" class="<?= isset($user) && $user ? "connected" : "disconnected" ?>">
@@ -32,7 +32,21 @@
 </div>
 <dialog id="connection_modal" class="<?= isset($user) && $user ? "connected" : "disconnected" ?>">
     <div id="connection_infos">
-        UwU
+        <h4>Reservation de <b class="username">Username</b>.</h4>
+        <div id="ci_tableau_prix">
+            <div>
+                <p class="ci_tp_title">Nombre de place au tarif jeunes (<b>6€</b>)</p>
+                <p class="ci_tp_dash">----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
+                <p class="ci_tp_quantity">2</p>
+            </div>
+            <div>
+                <p class="ci_tp_title">Nombre de place au tarif normal (<b>12€</b>)</p>
+                <p class="ci_tp_dash">----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
+                <p class="ci_tp_quantity">2</p>
+            </div>
+        </div>
+        <p class="ci_total">Total due : <b>36€</b></p>
+        <button id="disconnected_button">Me déconnecter</button>
     </div>
     <div id="forms-conner">
         <form id="form-conn" method="post">

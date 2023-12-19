@@ -83,3 +83,4 @@ disconnection = function(){
     }
     xhttp.send(null)
 }
+document.getElementById("disconnected_button").addEventListener("click", disconnection)
