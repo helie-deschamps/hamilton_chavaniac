@@ -6,6 +6,13 @@ header {
     font-weight: bold;
 }
 
+header > img {
+    width: 6em;
+    position: absolute;
+    right: 50%;
+    transform: translate(50%, -.78em);
+}
+
 header a {
     color: rgb(240, 195, 0);
     text-decoration: none;
@@ -21,7 +28,7 @@ header a {
     border-radius: 1.2em;
 }
 
-#right-header, #left-header, #connexion {
+#right-header, #left-header, .data_user, .button_connection {
     display: flex;
     align-items: center;
 }
@@ -37,6 +44,12 @@ header a {
     background: rgb(240, 195, 0);
     padding: .2em 1em;
     border-radius: .5em;
+}
+#connexion.connected .button_connection {
+    display: none;
+}
+#connexion.disconnected .data_user {
+    display: none;
 }
 #connexion button {
     border: none;
@@ -68,4 +81,69 @@ header a {
     background: rgb(240, 195, 0);
     padding: 2em;
     border-radius: .5em;
+}
+
+#notification_modal {
+    position: fixed;
+    margin: 0;
+    z-index: 10;
+    left: 50%;
+    top: -4em;
+    transform: translate(-50%, 10em) scale(1);
+    padding: 1em 2em;
+    border-radius: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: black;
+    color: white;
+    flex-direction: column;
+    transition: transform .15s ease-out;
+    border: none;
+}
+#notification_modal button {
+    text-decoration: underline;
+    background: none;
+    color: white;
+    border: none;
+    font-weight: bold;
+}
+#notification_modal.alertnotif {
+    color: rgb(215, 151, 151);
+}
+.minified_modal {
+    transform: translate(-50%, -50%) scale(0) !important;
+}
+
+#connection_modal {
+    overflow: hidden;
+}
+#connection_modal > div {
+    transition: transform .15s ease-out;
+}
+#connection_modal.connected #forms-conner {
+    transform: scale(0);
+    height: 0;
+}
+#connection_modal.disconnected #connection_infos {
+    transform: scale(0);
+    height: 0;
+}
+#connection_modal.connected {
+    animation: 3s ease-in 1s infinite reverse both running slidein;
+}
+#connection_modal.disconnected {
+    animation: 3s ease-in 1s infinite reverse both running slidein;
+}
+
+@keyframes connection_modal {
+    from {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(0);
+    }
+    to {
+        transform: translate(-50%, -50%) scale(1);
+    }
 }

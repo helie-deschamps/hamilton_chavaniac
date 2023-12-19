@@ -1,0 +1,51 @@
+/*cagnotte*/
+#progress-container {
+    width: 50%;
+    margin: 50px auto;
+    text-align: center;
+}
+
+#progress-bar {
+    width: 100%;
+    height: 30px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+#progress {
+    height: 100%;
+    background-color: #4caf50;
+    animation: fill-progress 2s ease-out forwards;
+}
+
+#amount-text {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+@keyframes fill-progress {
+    from {
+        width: 0;
+    }
+    to {
+        width: var(--progress-width);
+    }
+}
+
+body {
+    background-color: #FBF2B7;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh; /* 100% de la hauteur de la fenêtre */
+}
+
+.presentation,
+.projet,
+.financement
+.p {
+    text-align: center;
+    margin: 20px; /* Ajoutez une marge entre les sections pour plus d'espace */
+}
+
