@@ -2,13 +2,38 @@
 
 include_once __DIR__ . '/Reservation.php';
 
+/**
+ * Class User
+ * Représente un utilisateur.
+ *
+ * @property int $id L'identifiant de l'utilisateur.
+ * @property string $email L'adresse email de l'utilisateur.
+ * @property Reservation|null $reservation La reservation de l'utilisateur (null si non existante).
+ * @property string $username Le nom d'utilisateur.
+ * @property int $code_icone Le code de l'icone de l'utilisateur.
+ */
 class User
 {
-    public $id;
-    public $email;
-    public $reservation;
-    public $username;
-    public $code_icone;
+    /**
+     * @var int L'identifiant de l'utilisateur.
+     */
+    public int $id;
+    /**
+     * @var string L'adresse email de l'utilisateur.
+     */
+    public string $email;
+    /**
+     * @var Reservation|null La reservation de l'utilisateur (null si non existante).
+     */
+    public Reservation|null $reservation;
+    /**
+     * @var string Le nom d'utilisateur.
+     */
+    public string $username;
+    /**
+     * @var int Le code de l'icone de l'utilisateur.
+     */
+    public int $code_icone;
 
     /**
      * @param int $id L'identifiant de l'utilisateur.
