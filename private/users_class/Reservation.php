@@ -78,4 +78,36 @@ class Reservation
         }
         return $inJSON ? json_encode($participantsTrieResult) : $participantsTrieResult;
     }
+
+/**
+     * Retourne le prix total de la réservation.
+     *
+     * @return float Le prix total de la réservation.
+     */
+    public function prixTotal(): float
+    {
+        $prixTotal = 0;
+        foreach ($this->participants as $participant) {
+            $prixTotal += $participant->price;
+        }
+        return $prixTotal;
+    }
+
+    /**
+     * Compte le nombre de participants d'un certain prix.
+     *
+     * @param float $price Le prix des participants à compter.
+     *
+     * @return int Le nombre de participants d'un certain prix.
+     */
+    public function countParticipants(float $price): int
+    {
+        $count = 0;
+        foreach ($this->participants as $participant) {
+            if ($participant->price == $price) {
+                $count++;
+            }
+        }
+        return $count;
+    }
 }

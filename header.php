@@ -33,24 +33,45 @@
 <dialog id="connection_modal" class="<?= isset($user) && $user ? "connected" : "disconnected" ?>">
     <div id="connection_infos">
         <h4>Reservation de <b class="username">Username</b>.</h4>
-        <div id="ci_tableau_prix">
-            <div>
-                <p class="ci_tp_title">Nombre de place au tarif jeunes (<b>6€</b>)</p>
-                <p class="ci_tp_dash">----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
-                <p class="ci_tp_quantity">2</p>
+        <?php if(isset($user) && !empty($user->reservation)):?>
+            <div id="ci_tableau_prix">
+                <?php
+                if($user->reservation->countParticipants(105) > 0):?>
+                    <div>
+                        <p class="ci_tp_title">Nombre de place au tarif jeunes (<b>105€</b>)</p>
+                        <p class="ci_tp_dash">----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
+                        <p class="ci_tp_quantity"><?= $user->reservation->countParticipants(105) ?></p>
+                    </div>
+                <?php endif;?>
+                <div>
+                    <p class="ci_tp_title">Nombre de place au tarif étudiants (<b>70€</b>)</p>
+                    <p class="ci_tp_dash">----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
+                    <p class="ci_tp_quantity"><?= $user->reservation->countParticipants(70) ?></p>
+                </div>
+                <div>
+                    <p class="ci_tp_title">Nombre de place au tarif normal (<b>50€</b>)</p>
+                    <p class="ci_tp_dash">----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
+                    <p class="ci_tp_quantity"><?= $user->reservation->countParticipants(80) ?></p>
+                </div>
+                <div>
+                    <p class="ci_tp_title">Nombre de place au tarif normal (<b>40€</b>)</p>
+                    <p class="ci_tp_dash">----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
+                    <p class="ci_tp_quantity"><?= $user->reservation->countParticipants(40) ?></p>
+                </div>
+                <?php foreach($user->reservation->tableauDePrix() as $prix): // $prix = [ prix (float), nombre de participants a ce prix (int) ]
+                        if($prix[0] != 105 && $prix[0] != 70 && $prix[0] != 50 && $prix[0] != 40):
+                 ?>
+                    <div>
+                        <p class="ci_tp_title">Nombre de place au tarif normal (<b><?= $prix?>€</b>)</p>
+                        <p class="ci_tp_dash">----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
+                        <p class="ci_tp_quantity"><?= $user->reservation->countParticipants($prix) ?></p>
+                    </div>
+                <?php endif; endforeach;?>
             </div>
-            <div>
-                <p class="ci_tp_title">Nombre de place au tarif étudiants (<b>12€</b>)</p>
-                <p class="ci_tp_dash">----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
-                <p class="ci_tp_quantity">2</p>
-            </div>
-            <div>
-                <p class="ci_tp_title">Nombre de place au tarif normal (<b>12€</b>)</p>
-                <p class="ci_tp_dash">----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
-                <p class="ci_tp_quantity">2</p>
-            </div>
-        </div>
-        <p class="ci_total">Total due : <b id="price-total">36€</b></p>
+            <p class="ci_total">Total due : <b id="price-total"><?= $user->reservation->prixTotal() ?></b>€</p>
+        <?php else:?>
+            <a href="billetterie"><button>Précomander mes billets</button></a>
+        <?php endif;?>
         <p>Un mail vous sera envoyer a l’addresse : mail@amil.com, une semaine avant l’événement.</p>
         <p>Le payement se fera l’hors de l’événement.</p>
         <button id="disconnected_button">Me déconnecter</button>
