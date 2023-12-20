@@ -40,12 +40,19 @@
                 <p class="ci_tp_quantity">2</p>
             </div>
             <div>
+                <p class="ci_tp_title">Nombre de place au tarif étudiants (<b>12€</b>)</p>
+                <p class="ci_tp_dash">----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
+                <p class="ci_tp_quantity">2</p>
+            </div>
+            <div>
                 <p class="ci_tp_title">Nombre de place au tarif normal (<b>12€</b>)</p>
                 <p class="ci_tp_dash">----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
                 <p class="ci_tp_quantity">2</p>
             </div>
         </div>
-        <p class="ci_total">Total due : <b>36€</b></p>
+        <p class="ci_total">Total due : <b id="price-total">36€</b></p>
+        <p>Un mail vous sera envoyer a l’addresse : mail@amil.com, une semaine avant l’événement.</p>
+        <p>Le payement se fera l’hors de l’événement.</p>
         <button id="disconnected_button">Me déconnecter</button>
     </div>
     <div id="forms-conner">

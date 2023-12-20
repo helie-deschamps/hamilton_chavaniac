@@ -253,3 +253,7 @@ input[type="checkbox"] {
 .ci_total {
     text-align: right;
 }
+
+#disconnected_button {
+    margin-top: 1em;
+}
