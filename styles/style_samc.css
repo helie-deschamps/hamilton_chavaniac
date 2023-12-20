@@ -1,7 +1,8 @@
 /* page*/
 body {
-    background-color: #FBF2B7;
-    font-family: "afacad"
+    background-color: rgb(32, 32, 32);
+    font-family: "afacad";
+    color: #ffffff;
 }
 
 body p{
@@ -71,8 +72,3 @@ p,h1,h3 {
     width: auto;
 }
 
-.carousel-inner p {
-    color: #FBF2B7;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5); 
-    font-size: 20px;
-}
