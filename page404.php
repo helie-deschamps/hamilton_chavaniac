@@ -12,17 +12,15 @@
             height: 100vh;
         }
         @font-face {
-    font-family: 'MaPolicePersonnalisée';
-    src: url('fonts/HOMINIS.ttf') format('ttf');
-    font-weight: normal;
-    font-style: normal;
-    }
+            font-family: 'HOMINIS';
+            src: url('fonts/HOMINIS.woff') format('woff');
+        }
 
-    .titre-erreur {
-        font-family: 'MaPolicePersonnalisée';
-        
+        .titre-erreur {
+            font-family: 'HOMINIS', serif;
 
-    }
+
+        }
 
     </style>
 </head>
