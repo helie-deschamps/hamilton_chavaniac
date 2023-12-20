@@ -7,10 +7,7 @@ header {
 }
 
 header > img {
-    width: 6em;
-    position: absolute;
-    right: 50%;
-    transform: translate(50%, -.78em);
+    height: 4em;
 }
 
 header a {
