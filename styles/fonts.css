@@ -5,8 +5,40 @@
     font-display: swap;
     src: url('../fonts/CrimsonText-Regular.woff') format('woff');
 }
+@font-face {
+    font-family: 'Afacad';
+    font-style: normal;
+    font-weight: normal;
+    font-display: swap;
+    src: url('../fonts/Afacad-Medium.woff') format('woff');
+}
+@font-face {
+    font-family: 'Afacad';
+    font-style: normal;
+    font-weight: bold;
+    font-display: swap;
+    src: url('../fonts/Afacad-Bold.woff') format('woff');
+}
+@font-face {
+    font-family: 'Afacad';
+    font-style: italic;
+    font-weight: normal;
+    font-display: swap;
+    src: url('../fonts/Afacad-Italic.woff') format('woff');
+}
 h1, h2, h3 {
     font-family: 'Crimson Text', serif;
     font-weight: 400;
     font-style: normal;
+}
+* {
+    font-family: 'Afacad', sans-serif;
+    font-weight: normal;
+    font-style: normal;
+}
+b {
+    font-weight: bold;
+}
+i {
+    font-style: italic;
 }
