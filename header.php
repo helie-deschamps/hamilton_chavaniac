@@ -32,7 +32,7 @@
 </div>
 <dialog id="connection_modal" class="<?= isset($user) && $user ? "connected" : "disconnected" ?>">
     <div id="connection_infos">
-        <h4>Reservation de <b class="username">Username</b>.</h4>
+        <h4>Reservation de <b id="username"><?= isset($user) && $user ? $user->username : "" ?></b>.</h4>
         <?php if(isset($user) && !empty($user->reservation)):?>
             <div id="ci_tableau_prix">
                 <?php

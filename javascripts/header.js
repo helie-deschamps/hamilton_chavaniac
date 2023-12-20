@@ -69,6 +69,7 @@ connection = function(user){
     modal.classList.remove('disconnected')
     document.getElementById('user_icon').src=`/img/users_icons/${user.code_icone}.png`
     document.getElementById('user_icon').alt=`icon de ${user.username}`
+    document.getElementById('username').innerHTML =  user.username
 }
 disconnection = function(){
     buttonConnection.classList.remove('connected')
