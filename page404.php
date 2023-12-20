@@ -10,6 +10,7 @@
             background-position: center;
             background-repeat: no-repeat;
             height: 100vh;
+            
         }
         @font-face {
             font-family: 'HOMINIS';
@@ -18,9 +19,28 @@
 
         .titre-erreur {
             font-family: 'HOMINIS', serif;
-
-
+            color: white;
+            font-size: 7em;
+            margin: 1.5em;
+            position: relative;
         }
+
+    @media screen and (min-width: 1024px) {
+        body {
+    background-image: url('img/page-404.png');
+        }
+    }
+
+    @media screen and (max-width: 1023px) {
+        body {
+    background-image: url('img/page-404_mobile.png');
+        }
+
+        .titre-erreur {
+            margin:0.5em
+        }
+    }
+
 
     </style>
 </head>
