@@ -1,7 +1,12 @@
 /* page*/
 body {
     background-color: #FBF2B7;
+    font-family: "afacad"
+}
 
+body p{
+margin-left: 20%;
+margin-right:20% ;
 }
 
 .presentation,
@@ -57,4 +62,17 @@ p,h1,h3 {
     to {
         width: var(--progress-width);
     }
+}
+
+/*carousel*/
+
+.carousel-inner img {
+    height: 390px;
+    width: auto;
+}
+
+.carousel-inner p {
+    color: #FBF2B7;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5); 
+    font-size: 20px;
 }
