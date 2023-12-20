@@ -57,7 +57,7 @@ header a {
     background: none;
     color: black;
 }
-#connexion button:last-child {
+#connexion div.data_user button:last-child {
     padding-left: 0;
 }
 #connexion:hover, #connexion button:hover {
