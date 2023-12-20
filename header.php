@@ -62,9 +62,9 @@
                         if($prix[0] != 105 && $prix[0] != 70 && $prix[0] != 50 && $prix[0] != 40):
                  ?>
                     <div>
-                        <p class="ci_tp_title">Nombre de place au tarif normal (<b><?= $prix?>€</b>)</p>
+                        <p class="ci_tp_title">Nombre de place au tarif normal (<b><?= $prix[0]?>€</b>)</p>
                         <p class="ci_tp_dash">----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
-                        <p class="ci_tp_quantity"><?= $user->reservation->countParticipants($prix) ?></p>
+                        <p class="ci_tp_quantity"><?= $user->reservation->countParticipants($prix[0]) ?></p>
                     </div>
                 <?php endif; endforeach;?>
             </div>
