@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hamilton, la comédie musicale</title>
     <script src="anim.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles/design_system.css">
     <link href="style.css" rel="stylesheet"/>
 </head>
 <body>
