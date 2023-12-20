@@ -7,6 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Billetterie</title>
+    <link rel="stylesheet" type="text/css" href="styles/design_system.css">
     <link rel="stylesheet" type="text/css" href="styles/fonts.css">
     <link rel="stylesheet" type="text/css" href="styles/style_billetterie.css">
 </head>

@@ -54,6 +54,7 @@ header a {
 #connexion button {
     border: none;
     background: none;
+    color: black;
 }
 #connexion:hover, #connexion button:hover {
     cursor: pointer;
