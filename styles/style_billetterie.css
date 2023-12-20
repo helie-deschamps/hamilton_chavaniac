@@ -5,6 +5,7 @@ body {
 .image-bandeau {
     position: relative;
     width: 100%;
+    margin-top: 3em;
 }
 
 .image-bandeau img {

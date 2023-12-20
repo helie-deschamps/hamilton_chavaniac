@@ -15,13 +15,13 @@
 ?>
 <body>
 <div class="image-bandeau">
-    <img src="img/bandeau-billetterie.png" alt="bandeau">
+    <img src="img/bandeau-billetterie.webp" alt="bandeau">
 </div>
 
 <div class="flex-billets">
     <div class="billet billet-jaune">
         <div class="face-avant">
-            <img src="img/billet-rencontre.png" alt="billet-rencontre">
+            <img src="img/billet-rencontre.webp" alt="billet-rencontre">
         </div>
         <div class="face-arriere">
             <p>LIMITÉ À 20 PLACES!<br>
@@ -42,7 +42,7 @@
     </div>
     <div class="billet billet-marron">
         <div class="face-avant">
-            <img src="img/billet-tarifplein.png" alt="billet-tarifplein">
+            <img src="img/billet-tarifplein.webp" alt="billet-tarifplein">
         </div>
         <div class="face-arriere">
         <p>Ce billet est destiné aux adultes et aux enfant de plus de 12 ans n’étant pas étudiant. Ceci est une prévente, aucun paiement en ligne ne peut être effectué. <br>
@@ -63,7 +63,7 @@
 
     <div class="billet billet-rouge">
         <div class="face-avant">
-            <img src="img/billet-enfant.png" alt="billet-enfant">
+            <img src="img/billet-enfant.webp" alt="billet-enfant">
         </div>
         <div class="face-arriere">
         <p>Ce billet est destiné  aux enfant de moins de 12 ans accompagné obligatoirement d’un adulte. Ceci est une prévente, aucun paiement en ligne ne peut être effectué. <br>
@@ -83,7 +83,7 @@
 
     <div class="billet billet-vert">
         <div class="face-avant">
-            <img src="img/billet-etudiant.png" alt="billet-etudiant">
+            <img src="img/billet-etudiant.webp" alt="billet-etudiant">
         </div>
         <div class="face-arriere">
         <p>Ce billet est destiné  aux étudiants valable seulement sur présentation d’une carte étudiante. Ceci est une prévente, aucun paiement en ligne ne peut être effectué. <br>

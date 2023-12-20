@@ -57,9 +57,26 @@ class Reservation
      * exemple:
      * [ [ 12.5, 2 ], [ 10, 1 ], [ 7, 2 ] ]
      */
-    public function tableauDePrix($inJSON = false): array|string
+    public function tableauDePrix(bool $inJSON = false): array|string
     {
         // trie les participant par prix dans un nouveau tableau du modele [ [ prix (float), nombre de participants a ce prix (int) ], ... ]
+        /*$participantsTrie = [
+            40 => 0, // Tarif enfants
+            50 => 0, // Tarif étudiants
+            70 => 0, // Tarif plein
+            105 => 0, // Tarif premium
+        ];
+        foreach ($this->participants as $participant) {
+            if(is_null($participantsTrie[$participant->price])) {
+                $participantsTrie[$participant->price] = 0;
+            }
+            $participantsTrie[$participant->price] += 1;
+        }
+        $participantsTrieResult = [];
+        foreach ($participantsTrie as $price => $participants) {
+            $participantsTrieResult[] = [$price, $participants];
+        }
+        return $inJSON ? json_encode($participantsTrieResult) : $participantsTrieResult;*/
         $participantsTrie = [];
         foreach ($this->participants as $participant) {
             $participantsTrie[$participant->price][] = $participant;
@@ -69,5 +86,37 @@ class Reservation
             $participantsTrieResult[] = [$price, count($participants)];
         }
         return $inJSON ? json_encode($participantsTrieResult) : $participantsTrieResult;
+    }
+
+/**
+     * Retourne le prix total de la réservation.
+     *
+     * @return float Le prix total de la réservation.
+     */
+    public function prixTotal(): float
+    {
+        $prixTotal = 0;
+        foreach ($this->participants as $participant) {
+            $prixTotal += $participant->price;
+        }
+        return $prixTotal;
+    }
+
+    /**
+     * Compte le nombre de participants d'un certain prix.
+     *
+     * @param float $price Le prix des participants à compter.
+     *
+     * @return int Le nombre de participants d'un certain prix.
+     */
+    public function countParticipants(float $price): int
+    {
+        $count = 0;
+        foreach ($this->participants as $participant) {
+            if ($participant->price == $price) {
+                $count++;
+            }
+        }
+        return $count;
     }
 }
