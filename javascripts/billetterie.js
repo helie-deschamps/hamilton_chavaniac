@@ -4,19 +4,15 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     document.querySelector('.billet-jaune .add-to-cart-btn').addEventListener('click', () => {
         addTicketToAccount(105, document.querySelector('.billet-jaune .quantity-input').value)
-        updateTableauPrix()
     })
     document.querySelector('.billet-marron .add-to-cart-btn').addEventListener('click', () => {
-        addTicketToAccount(70, document.querySelector('.billet-jaune .quantity-input').value)
-        updateTableauPrix()
+        addTicketToAccount(70, document.querySelector('.billet-marron .quantity-input').value)
     })
     document.querySelector('.billet-rouge .add-to-cart-btn').addEventListener('click', () => {
-        addTicketToAccount(50, document.querySelector('.billet-jaune .quantity-input').value)
-        updateTableauPrix()
+        addTicketToAccount(50, document.querySelector('.billet-rouge .quantity-input').value)
     })
     document.querySelector('.billet-vert .add-to-cart-btn').addEventListener('click', () => {
-        addTicketToAccount(40, document.querySelector('.billet-jaune .quantity-input').value)
-        updateTableauPrix()
+        addTicketToAccount(40, document.querySelector('.billet-vert .quantity-input').value)
     })
 
     function changeQuantity(input, delta) {
@@ -52,6 +48,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 console.log(xhr.responseText)
                 if (xhr.responseText === "1") {
                     pushNotif(`${quantity} billet${quantity>1?"s":""} ajouté${quantity>1?"s":""} à votre réservation !`)
+                    updateTableauPrix()
                 } else {
                     pushNotif(`Erreur lors de l'ajout des billets`, true)
                 }
