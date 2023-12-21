@@ -67,7 +67,11 @@ Nous vous invitons à nous rejoindre pour célébrer l'art, l'histoire et le gé
     <p>biuezgkqhjvdhizhd</p>
 <div class = trailer>
     <iframe width="919" height="517" src="https://www.youtube.com/embed/DSCKfXpAGHc" title="Hamilton | Official Trailer | Disney+" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 </div>    
+
+
+        <a href="faq.html">Aller à la FAQ</a>
 
     <footer>
     </footer>

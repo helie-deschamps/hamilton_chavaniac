@@ -59,24 +59,6 @@ class Reservation
      */
     public function tableauDePrix(bool $inJSON = false): array|string
     {
-        // trie les participant par prix dans un nouveau tableau du modele [ [ prix (float), nombre de participants a ce prix (int) ], ... ]
-        /*$participantsTrie = [
-            40 => 0, // Tarif enfants
-            50 => 0, // Tarif étudiants
-            70 => 0, // Tarif plein
-            105 => 0, // Tarif premium
-        ];
-        foreach ($this->participants as $participant) {
-            if(is_null($participantsTrie[$participant->price])) {
-                $participantsTrie[$participant->price] = 0;
-            }
-            $participantsTrie[$participant->price] += 1;
-        }
-        $participantsTrieResult = [];
-        foreach ($participantsTrie as $price => $participants) {
-            $participantsTrieResult[] = [$price, $participants];
-        }
-        return $inJSON ? json_encode($participantsTrieResult) : $participantsTrieResult;*/
         $participantsTrie = [];
         foreach ($this->participants as $participant) {
             $participantsTrie[$participant->price][] = $participant;

@@ -38,23 +38,23 @@
                 <?php
                 if($user->reservation->countParticipants(105) > 0):?>
                     <div>
-                        <p class="ci_tp_title">Nombre de place au tarif jeunes (<b>105€</b>)</p>
+                        <p class="ci_tp_title">Nombre de place au tarif rencontre (<b>105€</b>)</p>
                         <p class="ci_tp_dash">----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
                         <p class="ci_tp_quantity"><?= $user->reservation->countParticipants(105) ?></p>
                     </div>
                 <?php endif;?>
                 <div>
-                    <p class="ci_tp_title">Nombre de place au tarif étudiants (<b>70€</b>)</p>
+                    <p class="ci_tp_title">Nombre de place au tarif normal (<b>70€</b>)</p>
                     <p class="ci_tp_dash">----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
                     <p class="ci_tp_quantity"><?= $user->reservation->countParticipants(70) ?></p>
                 </div>
                 <div>
-                    <p class="ci_tp_title">Nombre de place au tarif normal (<b>50€</b>)</p>
+                    <p class="ci_tp_title">Nombre de place au tarif étudiant (<b>50€</b>)</p>
                     <p class="ci_tp_dash">----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
                     <p class="ci_tp_quantity"><?= $user->reservation->countParticipants(80) ?></p>
                 </div>
                 <div>
-                    <p class="ci_tp_title">Nombre de place au tarif normal (<b>40€</b>)</p>
+                    <p class="ci_tp_title">Nombre de place au tarif enfant (<b>40€</b>)</p>
                     <p class="ci_tp_dash">----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
                     <p class="ci_tp_quantity"><?= $user->reservation->countParticipants(40) ?></p>
                 </div>
@@ -62,7 +62,7 @@
                         if($prix[0] != 105 && $prix[0] != 70 && $prix[0] != 50 && $prix[0] != 40):
                  ?>
                     <div>
-                        <p class="ci_tp_title">Nombre de place au tarif normal (<b><?= $prix[0]?>€</b>)</p>
+                        <p class="ci_tp_title">Nombre de place au tarif spécial de <b><?= $prix[0]?>€</b></p>
                         <p class="ci_tp_dash">----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
                         <p class="ci_tp_quantity"><?= $user->reservation->countParticipants($prix[0]) ?></p>
                     </div>
@@ -78,14 +78,14 @@
     </div>
     <div id="forms-conner">
         <form id="form-conn" method="post">
-            <h4>J’ai déja un compte</h4>
+            <h4>J’ai déjà un compte</h4>
             <div>
                 <label for="emaila1">E-mail</label>
                 <input id="emaila1" type="email" name="email" placeholder="Mon addresse e-mail" required>
             </div>
             <div>
                 <label for="passworda1">Mot de passe</label>
-                <input id="passworda1" type="password" name="password" placeholder="Mon mot de passe" required>
+                <input id="passworda1" type="password" name="password" placeholder="Mon mot de passe" pattern="(?=.*[a-z])(?=.*[A-Z]).{7,200}" required>
             </div>
             <div class="cookies_cb_div">
                 <input id="cookiesa1" type="checkbox" name="cookieAccepted">
@@ -95,26 +95,43 @@
             <p>Un problème, contactez nous a l’adresse : <a href="mailto:oui.oui@non.non">oui.oui@non.non</a></p>
         </form>
         <form id="form-create-acc" method="post">
-            <h4>Je shouaite crée un compte</h4>
+            <h4>Je shouaite créer un compte</h4>
             <div>
                 <label for="emaila2">E-mail</label>
                 <input id="emaila2" type="email" name="email" placeholder="Mon addresse e-mail" required>
             </div>
             <div>
                 <label for="passworda2">Mot de passe</label>
-                <input id="passworda2" type="password" name="password" placeholder="Mon mot de passe" required>
+                <input id="passworda2" type="password" name="password" placeholder="Mon mot de passe" pattern="(?=.*[a-z])(?=.*[A-Z]).{7,200}" required>
             </div>
+            <p>Votre mot de passe doit contenir une lettre minuscule et une majuscule et sa longueur doit être entre 7 et 200 caractères.</p>
             <div>
                 <label for="usernamea2">Nom d’utilisateur</label>
                 <input id="usernamea2" type="text" name="username" placeholder="Mon nom ou psuedo" required>
             </div>
             <div>
-                <label for="usernamea2">Je choisis mon icone</label>
-                <input type="number" name="icon_id" placeholder="Icone" required>
+                <label for="iconea2">Je choisis mon icone</label>
+                <input id="iconea2" type="number" name="icon_id" placeholder="Icone" required value="1">
+                <i id="icon-selected">Alexander Hamilton</i>
+            </div>
+            <?php $nameIcones = [
+                "Alexander Hamilton",
+                "Aaron Burr",
+                "Marquis de Lafayette",
+                "Eliza Schuyler",
+                "Angelica Schuyler",
+                "George Washington",
+                "King George III",
+                "Thomas Jefferson",
+            ] ?>
+            <div id="icone-choice-div">
+                <?php for($i = 1; $i <= 8; $i++):?>
+                    <img id="icone-choice-<?= $i ?>" class="icone-choice<?= $i==1?" icone-choice-selected":"" ?>" src="/img/users_icons/<?= $i ?>.png" alt="icon de <?= $i ?>" title="<?= $nameIcones[$i-1] ?>">
+                <?php endfor;?>
             </div>
             <div class="cookies_cb_div">
                 <input id="cookiesa2" type="checkbox" name="cookieAccepted">
-                <label for="cookiesa2">J’acceptes l’utilisation utilisation de cookies pour ne pas à avoir à me reconnecter à chaque venu sur ce site.<br>Pour en savoir plus sur la manière dont nous utilisons les cookies et comment tu peux gérer tes préférences, consulte notre [lien vers la politique de confidentialité et de cookies].</label>
+                <label for="cookiesa2">J’acceptes l’utilisation utilisation de cookies pour ne pas à avoir à me reconnecter à chaque venu sur ce site.</label>
             </div>
             <input type="submit" value="Crée mon compte">
         </form>

@@ -183,4 +183,56 @@ WHERE
         }
         else return null;
     }
+
+    /**
+     * Supprime un utilisateur à la base de données et toutes ses données associées.
+     *
+     * @param int $userID L'identifiant de l'utilisateur dont on veut la réservation
+     *
+     * @return bool Retourne true si la suppression réussit, sinon retourne false
+     */
+    public function removeUserFromUserID(int $userID): bool
+    {
+        // supprimer ses cookies
+        // supprimer les participants de sa réservation
+        // supprimer sa réservation
+        // supprimer l'utilisateur
+        $req = $this->PDO->prepare("
+            	DELETE FROM COOKIE WHERE `ID_UTILISATEUR` = :userID;
+                DELETE FROM PARTICIPANT WHERE `ID_RESERVATION` IN (SELECT `ID_RESERVATION` FROM RESERVATION WHERE `ID_UTILISATEUR` = :userID);
+                DELETE FROM RESERVATION WHERE `ID_UTILISATEUR` = :userID;
+                DELETE FROM UTILISATEUR WHERE `ID_UTILISATEUR` = :userID;
+            "
+        );
+        $req->bindParam(':userID', $userID, PDO::PARAM_INT);
+        // verrifie si une des requetes à retourné qq chose
+        $a = 0;
+        do {
+            $a += $req->rowCount();
+        } while ($req->nextRowset());
+        return $a > 0;
+    }
+
+    /**
+     * Permet de récupérer les ID, mail et username des 5 premiers utilisateurs selon une recherche à partir d'un email
+     *
+     * @param string $email L'adresse email de l'utilisateur à rechercher
+     *
+     * @return Array|null Retourne un tableau a de te tableau associatifs si au moin 1 utilisateur est trouvé, sinon retourne null.
+     */
+    public function findUserIDByMail(string $email): ?Array
+    {
+        $email = "%".$email."%";
+        $req = $this->PDO->prepare(
+            "SELECT `ID_UTILISATEUR`, `EMAIL`, `USERNAME` FROM `UTILISATEUR`
+                    WHERE `EMAIL` LIKE :email LIMIT 5;"
+        );
+        $req->bindParam(':email', $email);
+        $req->execute();
+        $res = $req->fetchAll(PDO::FETCH_ASSOC);
+        if($res != null){
+            return $res;
+        }
+        else return null;
+    }
 }
