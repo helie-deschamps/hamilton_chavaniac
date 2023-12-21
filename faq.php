@@ -12,11 +12,18 @@
         color: #ffffff;
     }
 
+    .faq {
+        margin-top:5% ;
+        margin-bottom:5% ;
+        margin-left:10% ;
+        margin-right: 10%;
+    }
+
     .faq-question {
         cursor: pointer;
         font-weight: bold;
         margin-bottom: 10px;
-        color: #007BFF;
+        color: #E6E5E5;
         display: flex;
         align-items: center;
         font-size: 30px;
@@ -30,7 +37,7 @@
 
     .arrow {
         margin-left: 10px;
-        color: #13294b;
+        color: rgb(182, 120, 35);
         /* Bleu foncé */
 
     }
@@ -61,7 +68,7 @@
     <?php
 include "header.php";
 ?>
-    <div>
+    <div class="faq">
         <div class="faq-question" onclick="toggleAnswer('hamilton-1', 'arrow-1')">
             Qui est Hamilton ?
             <div id="arrow-1" class="arrow">&#9658;</div>

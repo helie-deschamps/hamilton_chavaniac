@@ -29,7 +29,8 @@
             Ce billet comprend une entrée prioritaire avec une rencontre des artistes à la fin du spectacle.<br>
             Ceci est une prévente, aucun paiement en ligne ne peut être effectué. 
             Le paiement s’effectuera sur place le jour du spectacle.
-            Le nombre de préventes disponibles correspond aux nombres de places totales pour l’évènement.</p>
+            Le nombre de préventes disponibles correspond aux nombres de places totales pour l’évènement.<br>
+            105€ </p>
        
             <div class="bouton-billet">
                 <div class="quantity-selector">
@@ -48,7 +49,8 @@
         <div class="face-arriere">
         <p>Ce billet est destiné aux adultes et aux enfant de plus de 12 ans n’étant pas étudiant. Ceci est une prévente, aucun paiement en ligne ne peut être effectué. <br>
         Le paiement s’effectuera sur place le jour du spectacle.
-        Le nombre de préventes disponibles correspond aux nombres de places totales pour l’évènement.</p>
+        Le nombre de préventes disponibles correspond aux nombres de places totales pour l’évènement.<br>
+        70€ </p>
 
         <div class="bouton-billet">
                 <div class="quantity-selector">
@@ -69,7 +71,8 @@
         <div class="face-arriere">
         <p>Ce billet est destiné  aux enfant de moins de 12 ans accompagné obligatoirement d’un adulte. Ceci est une prévente, aucun paiement en ligne ne peut être effectué. <br>
         Le paiement s’effectuera sur place le jour du spectacle.
-        Le nombre de préventes disponibles correspond aux nombres de places totales pour l’évènement. </p>
+        Le nombre de préventes disponibles correspond aux nombres de places totales pour l’évènement.<br>
+        50€ </p>
 
         <div class="bouton-billet">
                 <div class="quantity-selector">
@@ -89,7 +92,8 @@
         <div class="face-arriere">
         <p>Ce billet est destiné  aux étudiants valable seulement sur présentation d’une carte étudiante. Ceci est une prévente, aucun paiement en ligne ne peut être effectué. <br>
         Le paiement s’effectuera sur place le jour du spectacle.
-        Le nombre de préventes disponibles correspond aux nombres de places totales pour l’évènement. </p>
+        Le nombre de préventes disponibles correspond aux nombres de places totales pour l’évènement.<br>
+        40€</p>
 
         <div class="bouton-billet">
                 <div class="quantity-selector">
@@ -103,5 +107,9 @@
     </div>
 </div>
 <script src="billetterie.js"></script>
+
+<?php
+    include_once 'footer.php'
+?>
  </body>
  </html>

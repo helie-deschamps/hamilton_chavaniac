@@ -1,177 +1,308 @@
-.image-bandeau {
-    position: relative;
-    width: 100%;
-    margin-top: 3em;
+@media (min-width: 768px) {
+    .image-bandeau {
+        position: relative;
+        width: 100%;
+        margin-top: 3em;
+    }
+
+    .image-bandeau img {
+        width: 100%;
+        height: auto;
+        max-height: 150px;
+        display: block;
+        object-fit: cover;
+    }
+
+    .flex-billets {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 5em;
+        padding: 5em 0;
+    }
+
+    .billet {
+        perspective: 1000px; 
+        width: 70em;
+        height: calc(70em * 591 / 1772);
+    }
+    .billet-jaune .face-arriere {
+        background-color: rgb(244, 228, 164);
+        color: black;
+    }
+
+    .billet-marron .face-arriere {
+        background-color: rgb(193, 174, 147);
+    }
+
+    .billet-rouge .face-arriere{
+        background-color: rgb(196, 162, 162);
+    }
+
+    .billet-vert .face-arriere {
+        background-color: rgb(129, 153, 128);
+    }
+
+    .billet > div {
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
+        backface-visibility: hidden; 
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    .face-avant {
+        z-index: 2;
+    }
+
+    .face-avant img {
+        width: 100%;
+    }
+        
+    .face-arriere {
+        transform: rotateY(180deg);
+        z-index: 1; 
+        height: 100%;
+        background-color: rgb(197, 197, 197);
+        display: flex;
+        flex-direction: row;
+
+    }
+
+    .face-arriere p {
+        width: 50%;
+        display: flex;
+        align-items: center;
+        text-align: center;
+    }
+
+    .quantity-selector {
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+    }
+
+    .quantity-btn {
+        background-color: #FFD700; 
+        color: black;
+        border: none;
+        padding: 10px 20px;
+        font-size: 1rem;
+        cursor: pointer;
+        outline: none;
+
+    }
+
+    .quantity-btn:first-child{
+        border-radius: 50% 0 0 50%; 
+    }
+
+    .quantity-btn:last-child{
+        border-radius: 0 50% 50% 0; 
+    }
+
+    .quantity-input {
+        background-color: rgb(250, 234, 115);
+        color: black;
+        border: none;
+        text-align: center;
+        padding: 5px 10px;
+        font-size: 1rem;
+        width: 50px;
+    }
+
+    .add-to-cart-btn {
+        background-color: #FFD700; 
+        color: black;
+        border: none;
+        padding: 15px 30px;
+        font-size: 1.25rem;
+        border-radius: 50px; 
+        cursor: pointer;
+        outline: none;
+        margin-top: 10px; 
+        display: block; 
+        width: 100%; 
+        box-sizing: border-box; 
+        text-transform: uppercase; 
+        font-weight: bold;
+    }
+
+    .quantity-btn:hover, .add-to-cart-btn:hover {
+        background-color: #FFA500; 
+    }
+
+    .quantity-btn:active, .add-to-cart-btn:active {
+        background-color: #E6AC00; 
+    }
+
+    .quantity-input {
+        pointer-events: none;
+    }
+
+    .bouton-billet{
+        display: flex;
+        flex-direction: column;
+        text-align: right;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .face-arriere p, .bouton-billet{
+        flex: 1;
+        margin: 0;
+        padding: 1.5em;
+    }
+
+    .billet:hover .face-avant {
+        transform: rotateY(-180deg); 
+    }
+
+    .billet:hover .face-arriere {
+        transform: rotateY(0deg); 
+    }
+
 }
 
-.image-bandeau img {
-    width: 100%;
-    height: auto;
-    max-height: 150px;
-    display: block;
-    object-fit: cover;
-}
+@media (max-width: 768px) {
 
-.titre-billetterie {
-    position: absolute;
-    top: 40%; 
-    left: 50%; 
-    transform: translate(-50%, -50%); 
-    color: white; 
-}
+    @media screen and (max-width: 768px) {
+   
+        .image-bandeau {
+            position: relative;
+            width: 100%;
+            margin-top: 2em;
+        }
+    
+        .image-bandeau img {
+            width: 100%;
+            height: auto;
+            max-height: 150px;
+            display: block;
+            object-fit: cover;
+        }
 
-.flex-billets {
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 5em;
-    padding: 5em 0;
-}
+        .billet {
+            width: 90%; 
+            height: auto; 
+            margin: 0 auto; 
+            gap: 3em;
+            padding: 1.5em 0;
+        }
+    
+        /* Rendre les images des billets responsive */
+        .billet .face-avant img, .billet .face-arriere img {
+            max-width: 100%; 
+            height: auto; 
+        }
+    
+        /* Suppression des effets de hover et animations */
+        .billet:hover .face-avant {
+            transform: none;
+        }
+    
+        .billet:hover .face-arriere {
+            transform: none;
+        }
 
-.billet {
-    perspective: 1000px; 
-    width: 70em;
-    height: calc(70em * 591 / 1772);
-}
-.billet-jaune .face-arriere {
-    background-color: rgb(244, 228, 164);
-}
+        .face-avant {
+            position: relative;
+            z-index: 2;
+        }
+    
+        .face-arriere {
+            position: relative;
+            z-index: 1;
+            transform: none;
+            justify-content: center;
+        }
 
-.billet-marron .face-arriere {
-    background-color: rgb(193, 174, 147);
-}
+        .face-arriere p {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            text-align: center;
+        }
 
-.billet-rouge .face-arriere{
-    background-color: rgb(196, 162, 162);
-}
-
-.billet-vert .face-arriere {
-    background-color: rgb(129, 153, 128);
-}
-
-.billet > div {
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
-    backface-visibility: hidden; 
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-}
-
-.face-avant {
-    z-index: 2;
- }
-
- .face-avant img {
-    width: 100%;
-}
+        .quantity-selector {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+        }
+    
+        .quantity-btn {
+            background-color: #FFD700; 
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            outline: none;
+    
+        }
+    
+        .quantity-btn:first-child{
+            border-radius: 50% 0 0 50%; 
+        }
+    
+        .quantity-btn:last-child{
+            border-radius: 0 50% 50% 0; 
+        }
+    
+        .quantity-input {
+            background-color: rgb(250, 234, 115);
+            color: black;
+            border: none;
+            text-align: center;
+            padding: 5px 10px;
+            font-size: 1rem;
+            width: 10px;
+        }
+    
+        .add-to-cart-btn {
+            background-color: #FFD700; 
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.25rem;
+            border-radius: 50px; 
+            cursor: pointer;
+            outline: none;
+            margin-top: 10px; 
+            display: block; 
+            width: 50%; 
+            box-sizing: border-box; 
+            text-transform: uppercase; 
+            font-weight: bold;
+        }
+    
+        .quantity-btn:hover, .add-to-cart-btn:hover {
+            background-color: #FFA500; 
+        }
+    
+        .quantity-btn:active, .add-to-cart-btn:active {
+            background-color: #E6AC00; 
+        }
+    
+        .quantity-input {
+            pointer-events: none;
+        }
+    
+        .bouton-billet{
+            display: flex;
+            flex-direction: column;
+            text-align: right;
+            justify-content: center;
+            align-items: center;
+    
+        }
+    }
     
 
-.face-arriere {
-    transform: rotateY(180deg);
-    z-index: 1; 
-    height: 100%;
-    background-color: rgb(197, 197, 197);
-    display: flex;
-    flex-direction: row;
 
 }
-
-.face-arriere p {
-    width: 50%;
-    display: flex;
-    align-items: center;
-    text-align: center;
-}
-
-.quantity-selector {
-    display: flex;
-    justify-content: center;
-    align-items: stretch;
-}
-
-.quantity-btn {
-    background-color: #FFD700; 
-    color: black;
-    border: none;
-    padding: 10px 20px;
-    font-size: 1rem;
-    cursor: pointer;
-    outline: none;
-
-}
-
-.quantity-btn:first-child{
-    border-radius: 50% 0 0 50%; 
-}
-
-.quantity-btn:last-child{
-    border-radius: 0 50% 50% 0; 
-}
-
-.quantity-input {
-    background-color: rgb(250, 234, 115);
-    color: black;
-    border: none;
-    text-align: center;
-    padding: 5px 10px;
-    font-size: 1rem;
-    width: 50px;
-}
-
-.add-to-cart-btn {
-    background-color: #FFD700; 
-    color: black;
-    border: none;
-    padding: 15px 30px;
-    font-size: 1.25rem;
-    border-radius: 50px; 
-    cursor: pointer;
-    outline: none;
-    margin-top: 10px; 
-    display: block; 
-    width: 100%; 
-    box-sizing: border-box; 
-    text-transform: uppercase; 
-    font-weight: bold;
-}
-
-.quantity-btn:hover, .add-to-cart-btn:hover {
-    background-color: #FFA500; 
-}
-
-.quantity-btn:active, .add-to-cart-btn:active {
-    background-color: #E6AC00; 
-}
-
-.quantity-input {
-    pointer-events: none;
-}
-
-.bouton-billet{
-    display: flex;
-    flex-direction: column;
-    text-align: right;
-    justify-content: center;
-    align-items: center;
-
-}
-
-.face-arriere p, .bouton-billet{
-    flex: 1;
-    margin: 0;
-    padding: 1.5em;
-}
-
-.billet:hover .face-avant {
-    transform: rotateY(-180deg); 
-}
-
-.billet:hover .face-arriere {
-    transform: rotateY(0deg); 
-}
-
-

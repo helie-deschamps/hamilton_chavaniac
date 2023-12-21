@@ -28,6 +28,10 @@ p,h1,h3 {
     justify-content: center;
 }
 
+.imgfinance {
+    flex-wrap: wrap;
+}
+
 .imgfinance img{
     width: auto;
     height:200px;
