@@ -71,7 +71,7 @@ Nous vous invitons à nous rejoindre pour célébrer l'art, l'histoire et le gé
 </div>    
 
 
-        <a href="faq.html">Aller à la FAQ</a>
+        <a href="faq.php">Aller à la FAQ</a>
 
     <footer>
     </footer>

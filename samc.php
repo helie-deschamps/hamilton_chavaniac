@@ -26,6 +26,7 @@ include "header.php";
 ?>
     <div class="presentation">
         <h1>Présentation</h1>
+       
         <p>La SAMC, Société des Amis du Musée Crozatier, rassemble passionnés et curieux de l'Art ancien, moderne et
             contemporain. Son objectif est de créer une connexion avec les admirateurs du musée, les invitant à rêver et
             à redécouvrir ses riches collections. Inspirée par Nietzsche, la SAMC célèbre la mémoire longue comme clé
@@ -79,7 +80,9 @@ include "header.php";
             est né le marquis de La Fayette, aujourd'hui transformé en musée et géré par la région Haute-Loire. Cet
             édifice historique, imprégné d'une riche histoire et culture, constitue le cadre idéal pour donner vie à la
             trame narrative captivante d'Hamilton, dont La Fayette est l'un des personnages principaux.</p>
+           
     </div>
+    <div class="logosamc"><img  src="img/logosamc.webp" alt="logosamc"></div>
     <div class="financement">
         <h1>Financement</h1>
         <p>Chaque place achetée pour assister à la pièce contribuera à hauteur de 75% à la restauration et à la
