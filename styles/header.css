@@ -81,7 +81,7 @@ header a {
 }
 #connection_modal {
     position: fixed;
-    width: 50vw;
+    width: 838px;
     margin: 0;
     z-index: 5;
     left: 50%;
@@ -309,7 +309,7 @@ header a {
 @media (max-width: 1085px) {
     #connection_modal-background {
         position: fixed;
-        display: inline;
+        display: none;
         background: black;
         z-index: 12;
         height: fit-content;
@@ -337,7 +337,12 @@ header a {
     }
     #forms-conner, #connection_infos {
         flex-direction: column;
+    }
+    #forms-conner {
         margin: 3em 10vw;
+    }
+    #connection_infos {
+        margin: 6em 10vw;
     }
 }
 
