@@ -8,10 +8,8 @@ class DB
     private static $instance;
     private PDO $PDO;
     private function __construct() {
-        $host = 'mysql-moor.alwaysdata.net';
-        $dbname = 'moor_hamilton';
-        putenv('USERNAME_DB=moor');
-        putenv('PASSWORD_DB=moorDELUX');
+        $host = getenv('HOST_DB');
+        $dbname = getenv('NAME_DB');
 
         $this->PDO = new PDO(
             'mysql:host='.$host.';port=3306;dbname='.$dbname.';charset=utf8',
