@@ -30,6 +30,7 @@
     }
     .billet-jaune .face-arriere {
         background-color: rgb(244, 228, 164);
+        color: black;
     }
 
     .billet-marron .face-arriere {

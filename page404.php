@@ -32,7 +32,7 @@
             font-family: 'HOMINIS', serif;
             color: white;
             font-size: 7em;
-            margin: 1.5em;
+            margin: 0.5em 1.25em;
             position: relative;
         }
 
@@ -48,7 +48,8 @@
         }
 
         .titre-erreur {
-            margin:0.5em
+            margin:0.5em;
+            text-align: center;
         }
     }
 
