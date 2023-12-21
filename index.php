@@ -32,6 +32,7 @@ Le Château Lafayette, un lieu empreint d'histoire et d'élégance, offre le dé
 
 Nous vous invitons à nous rejoindre pour célébrer l'art, l'histoire et le génie musical. Les billets sont désormais disponibles pour cette série de représentations limitées. Réservez votre place et soyez témoin de l'histoire en marche, ici, au cœur de la France, au Château Lafayette.</p>
  
+<h1>Carousel des chansons</h1>
     <div class="carousel">
         <button class="carousel-button prev">Précédent</button>
             <div class="carousel-track-container">
