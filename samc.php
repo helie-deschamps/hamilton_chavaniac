@@ -120,6 +120,12 @@ include "header.php";
         const maxAmount = 1000; // Montant maximum de la cagnotte en euros
         updateProgressBar(currentAmount, maxAmount);
         </script>
+
+
+
 </body>
+
+<footer><?php include_once"footer.php" ?>
+</footer>
 
 </html>
