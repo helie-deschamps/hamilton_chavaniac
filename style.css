@@ -33,11 +33,22 @@ figure.imageindex figcaption {
     text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.7); /* Ajoute une ombre pour améliorer la lisibilité sur des images claires */
 }
 
+.texteintro {
+    text-align: center;
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+    display :block;
+    margin:0 auto;
+    margin-top: 3em;
+    margin-bottom: 2em;
+    font-size: 1.3em;
+}
 
 .carousel {
     overflow: hidden;
     position: relative;
-    width: 65%; 
+    width: 66%; 
     display: flex;
     justify-content: center; /* centre les éléments horizontalement */
     align-items: center; /* centre les éléments verticalement */
@@ -71,10 +82,6 @@ figure.imageindex figcaption {
     align-items: center;
 }
 
-iframe {
-    width: 100%; /* la largeur de l'iframe s'ajuste à celle du slide */
-    height: 100%; /* la hauteur de l'iframe s'ajuste à celle du slide */
-}
 
 .carousel-button {
     position: absolute;
@@ -97,5 +104,10 @@ iframe {
 
 .trailer {
     display: flex;
-    
+    justify-content: center;
+    margin-bottom: 5em;
 }
+
+
+
+

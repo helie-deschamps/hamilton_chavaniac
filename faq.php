@@ -19,20 +19,26 @@
         color: #007BFF;
         display: flex;
         align-items: center;
+        font-size: 30px;
     }
 
     .faq-answer {
         display: none;
         margin-bottom: 20px;
+        font-size: 20px;
     }
 
     .arrow {
         margin-left: 10px;
+        color: #13294b;
+        /* Bleu foncé */
+
     }
 
     .rotate {
         transform: rotate(90deg);
-        transition: transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+        /* Ajoutez une transition de couleur */
     }
     </style>
     <script>
