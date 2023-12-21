@@ -7,7 +7,6 @@
 
     <span id="left-header">
         <a href="/">Accueil</a>
-        <a href="/spectacle">Spectacle</a>
         <a href="/samc">SAMC</a>
     </span>
     <img src="img/logo1.webp" alt="logo">
