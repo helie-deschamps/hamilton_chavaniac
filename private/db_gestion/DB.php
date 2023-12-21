@@ -258,4 +258,76 @@ WHERE
         $req->execute();
         return $req->rowCount() > 0;
     }
+
+    /**
+     * Ajoute un ticket à une réservation d'un utilisateur en créant une réservation si aucune n'existe. Et en mettant a jour la date de réservation.
+     *
+     * @param int $quantity La quantité de ticket à ajouter.
+     * @param float $price Le prix d'un ticket de la réservation.
+     * @param string $userID L'id de l'utilisateur lié a la réservation.
+     *
+     * @return bool Retourne true si l'ajout réussit, sinon retourne false.
+     */
+    public function addTicketToAccount(int $quantity, float $price, string $userID): bool
+    {
+        if($quantity < 1 || $price < 0){
+            return false;
+        }
+
+        // vérifie si l'utilisateur a une réservation
+        $req = $this->PDO->prepare(
+            "SELECT `ID_RESERVATION` FROM `RESERVATION` WHERE `ID_UTILISATEUR` = :userID;"
+        );
+        $req->bindParam(':userID', $userID, PDO::PARAM_INT);
+        $req->execute();
+        $res = $req->fetch(PDO::FETCH_ASSOC);
+
+        // si il n'en a pas, on en crée un et on récupère son ID
+        if($res == null){
+            $req = $this->PDO->prepare(
+                "INSERT INTO `RESERVATION` (`ID_UTILISATEUR`) VALUES (:userID);
+SELECT `ID_RESERVATION` FROM `RESERVATION` WHERE `ID_UTILISATEUR` = :userID;"
+            );
+            $req->bindParam(':userID', $userID, PDO::PARAM_INT);
+            $req->execute();
+            $req->nextRowset();
+            $res = $req->fetch(PDO::FETCH_ASSOC);
+            if($res == null){
+                return false;
+            }
+        }
+        // sinon updater la date de réservation
+        else {
+            $req = $this->PDO->prepare(
+                "UPDATE `RESERVATION` SET `DATE_DE_RESERVATION` = CURRENT_DATE WHERE `ID_UTILISATEUR` = :userID;"
+            );
+            $req->bindParam(':userID', $userID);
+            $req->execute();
+        }
+
+        // on supprime tout les ticket du même prix et du meme id de réservation
+        $req = $this->PDO->prepare(
+            "DELETE FROM `PARTICIPANT` WHERE `ID_RESERVATION` = :reservationID AND `TARIF` = :price;"
+        );
+        $req->bindParam(':reservationID', $res["ID_RESERVATION"], PDO::PARAM_INT);
+        $req->bindParam(':price', $price);
+        $req->execute();
+
+        $reqFinal = "INSERT INTO `PARTICIPANT` (`ID_RESERVATION`, `TARIF`) VALUES (:reservationID, :price);";
+        //boucle allant de 0 à quantity
+        for ($i = 1; $i < $quantity; $i++) {
+            $reqFinal .= "INSERT INTO `PARTICIPANT` (`ID_RESERVATION`, `TARIF`) VALUES (:reservationID, :price);";
+        }
+        // on ajoute les tickets à la réservation
+        $req = $this->PDO->prepare($reqFinal);
+        $req->bindParam(':reservationID', $res["ID_RESERVATION"], PDO::PARAM_INT);
+        $req->bindParam(':price', $price);
+        $req->execute();
+
+        return $req->rowCount() > 0;
+    }
 }
+
+// test de la fonction addTicketToAccount
+$db = DB::getInstance();
+$db->addTicketToAccount(1, 987.0, "36");

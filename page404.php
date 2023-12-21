@@ -1,4 +1,5 @@
 <?php
+include_once __DIR__ . '/private/authentication_systeme/try_auto_connection.php';
 // Récupération du code de l'erreur
     if(!isset($error)) {
         if(isset($_GET["error"])) {

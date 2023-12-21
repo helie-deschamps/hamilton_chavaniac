@@ -8,3 +8,8 @@
 <link rel="stylesheet" href="styles/fonts.css">
 <link rel="stylesheet" href="styles/header.css">
 <script src="javascripts/header.js" defer></script>
+<script>
+    user = {
+        id: <?= isset($user->id) ? $user->id : null ?>
+    }
+</script>
