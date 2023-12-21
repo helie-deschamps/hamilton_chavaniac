@@ -70,6 +70,8 @@ connection = function(user){
     document.getElementById('user_icon').src=`/img/users_icons/${user.code_icone}.png`
     document.getElementById('user_icon').alt=`icon de ${user.username}`
     document.getElementById('username').innerHTML =  user.username
+    document.getElementById('user-mail_').innerHTML =  user.email
+    updateTableauPrix()
 }
 disconnection = function(){
     buttonConnection.classList.remove('connected')
@@ -118,3 +120,26 @@ document.getElementById("burger_menu_checkbox").addEventListener("click", functi
         document.getElementsByTagName('header')[0].classList.remove("full-displayed")
     }
 })
+
+
+updateTableauPrix = function(){
+    var xhttp = new XMLHttpRequest()
+    xhttp.open("GET", "tableau_prix.php", true)
+    xhttp.onload = function() {
+        if (xhttp.status >= 200 && xhttp.status < 300) {
+            let rep = xhttp.responseText
+            try {
+                console.log(document.getElementById("ci_tableau_prix"))
+                document.getElementById("ci_tableau_prix").innerHTML = rep
+            } catch (e) {
+                pushNotif(`La connection a échoué. ${rep}`, true)
+            }
+        } else {
+            console.error('ER', xhttp.statusText)
+        }
+    }
+    xhttp.onerror = function() {
+        console.error('ER');
+    }
+    xhttp.send(null)
+}

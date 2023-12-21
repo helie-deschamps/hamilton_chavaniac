@@ -75,9 +75,13 @@ header a {
     overflow: auto;
     background-color: rgba(0,0,0,0.4);
 }
+#connection_modal-background p {
+    text-align: center;
+}
 #connection_modal {
     position: fixed;
     width: 838px;
+    max-height: 85vh;
     margin: 0;
     z-index: 5;
     left: 50%;
@@ -88,6 +92,7 @@ header a {
     padding: 2em;
     border-radius: .5em;
     max-height: 90vh;
+    overflow: scroll;
 }
 
 #notification_modal {
@@ -122,9 +127,6 @@ header a {
     transform: translate(-50%, -50%) scale(0) !important;
 }
 
-#connection_modal {
-    overflow: hidden;
-}
 #connection_modal > div {
     transition: transform .15s ease-out;
 }
@@ -255,6 +257,9 @@ header a {
 .icone-choice-selected {
     outline: .1em solid rgb(0, 0, 0);
 }
+.burger_menu {
+    display: none;
+}
 
 @media (max-width: 610px) {
     #left-header, #right-header {
@@ -268,6 +273,7 @@ header a {
         display: flex;
         justify-content: end;
         margin-right: 1em;
+        align-items: center;
     }
     .burger_menu > input {
         appearance: none;
@@ -289,6 +295,7 @@ header a {
     .full-displayed {
         flex-direction: column;
         gap: 1em;
+        align-items: center;
     }
     .full-displayed #left-header, .full-displayed #right-header {
         display: flex;
@@ -332,10 +339,10 @@ header a {
         flex-direction: column;
     }
     #forms-conner {
-        margin: 3em 10vw;
+        margin: 3em 10vw 8em 10vw;
     }
     #connection_infos {
-        margin: 6em 10vw;
+        margin: 6em 10vw 8em 10vw;
     }
 }
 

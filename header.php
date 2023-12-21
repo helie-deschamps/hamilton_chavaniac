@@ -72,9 +72,11 @@
             </div>
             <p class="ci_total">Total due : <b id="price-total"><?= $user->reservation->prixTotal() ?></b>€</p>
         <?php else:?>
-            <a href="billetterie"><button>Précomander mes billets</button></a>
+            <div id="ci_tableau_prix">
+                <a href="billetterie"><button>Précomander mes billets</button></a>
+            </div>
         <?php endif;?>
-        <p>Un mail vous sera envoyer a l’addresse : mail@amil.com, une semaine avant l’événement.</p>
+        <p>Un mail vous sera envoyer a l’addresse : <b id="user-mail_"><?= isset($user) && $user ? $user->email : "" ?></b>, une semaine avant l’événement.</p>
         <p>Le payement se fera l’hors de l’événement.</p>
         <button id="disconnected_button">Me déconnecter</button>
     </div>
