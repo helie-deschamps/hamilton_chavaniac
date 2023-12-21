@@ -4,13 +4,13 @@ body {
     margin: 0;
 }
 
-input[type="text"]:not(.quantity-input), input[type="password"], input[type="email"] {
+span:not(.burger_menu) input[type="text"]:not(.quantity-input), input[type="password"], input[type="email"] {
     background: none;
     border: black solid .35em;
     border-radius: 2em;
     padding: .2em 1.2em;
 }
-input[type="checkbox"]:checked {
+span:not(.burger_menu) input[type="checkbox"]:checked {
     background: black;
 }
 input[type="submit"], button {
