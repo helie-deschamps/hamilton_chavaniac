@@ -76,8 +76,8 @@
                 <a href="billetterie"><button>Précomander mes billets</button></a>
             </div>
         <?php endif;?>
-        <p>Un mail vous sera envoyer a l’addresse : <b id="user-mail_"><?= isset($user) && $user ? $user->email : "" ?></b>, une semaine avant l’événement.</p>
-        <p>Le payement se fera l’hors de l’événement.</p>
+        <p>Un mail vous sera envoyé a l’addresse : <b id="user-mail_"><?= isset($user) && $user ? $user->email : "" ?></b>, une semaine avant l’événement..</p>
+        <p>Le payement se fera lors de l’événement.</p>
         <button id="disconnected_button">Me déconnecter</button>
     </div>
     <div id="forms-conner">
@@ -93,10 +93,10 @@
             </div>
             <div class="cookies_cb_div">
                 <input id="cookiesa1" type="checkbox" name="cookieAccepted">
-                <label for="cookiesa1">J’acceptes l’utilisation utilisation de cookies pour ne pas à avoir à me reconnecter à chaque venu sur ce site.<br>Pour en savoir plus sur la manière dont nous utilisons les cookies et comment tu peux gérer tes préférences, consulte notre [lien vers la politique de confidentialité et de cookies].</label>
+                <label for="cookiesa1">J’accepte l’utilisation de cookies pour ne pas avoir à me reconnecter à chaque visite sur ce site.</label>
             </div>
             <input type="submit" value="Se connecter">
-            <p>Un problème, contactez nous a l’adresse : <a href="mailto:oui.oui@non.non">oui.oui@non.non</a></p>
+            <p>Un problème, contactez nous à l’adresse : <a href="mailto:contact@hamilton-samc.fr">contact@hamilton-samc.fr</a></p>
         </form>
         <form id="form-create-acc" method="post">
             <h4>Je shouaite créer un compte</h4>
@@ -111,10 +111,10 @@
             <p>Votre mot de passe doit contenir une lettre minuscule et une majuscule et sa longueur doit être entre 7 et 200 caractères.</p>
             <div>
                 <label for="usernamea2">Nom d’utilisateur</label>
-                <input id="usernamea2" type="text" name="username" placeholder="Mon nom ou psuedo" required>
+                <input id="usernamea2" type="text" name="username" placeholder="Mon nom ou pseudo" required>
             </div>
             <div>
-                <label for="iconea2">Je choisis mon icone</label>
+                <label for="iconea2">Je choisis mon icône</label>
                 <input id="iconea2" type="number" name="icon_id" placeholder="Icone" required value="1">
                 <i id="icon-selected">Alexander Hamilton</i>
             </div>
@@ -135,7 +135,7 @@
             </div>
             <div class="cookies_cb_div">
                 <input id="cookiesa2" type="checkbox" name="cookieAccepted">
-                <label for="cookiesa2">J’acceptes l’utilisation utilisation de cookies pour ne pas à avoir à me reconnecter à chaque venu sur ce site.</label>
+                <label for="cookiesa2">J’accepte l’utilisation de cookies pour ne pas avoir à me reconnecter à chaque visite sur ce site.</label>
             </div>
             <input type="submit" value="Crée mon compte">
         </form>
