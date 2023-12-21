@@ -144,6 +144,8 @@ include "header.php";
             revendeurs autorisés.
         </div>
     </div>
+
+    <?php include_once"footer.php" ?>
 </body>
 
 </html>
