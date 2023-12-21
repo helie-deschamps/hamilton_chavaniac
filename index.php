@@ -14,7 +14,7 @@
 <body>
    
 <?php
-include "header.php";
+    include "header.php";
 ?>
     <h1>Hamilton, la comédie musicale</h1>
 
@@ -23,7 +23,7 @@ include "header.php";
         <figcaption>Une première en France</figcaption>
     </figure>
 
-    <p>Nous sommes ravis de vous accueillir pour un événement historique et culturel sans précédent : la première représentation française de la comédie musicale révolutionnaire, Hamilton. Cette production acclamée, qui a captivé le cœur d'audiences à travers le monde, arrive enfin en France, dans le cadre majestueux du Château Lafayette.
+    <p class = "texteintro">Nous sommes ravis de vous accueillir pour un événement historique et culturel sans précédent : la première représentation française de la comédie musicale révolutionnaire, Hamilton. Cette production acclamée, qui a captivé le cœur d'audiences à travers le monde, arrive enfin en France, dans le cadre majestueux du Château Lafayette.
 
 Hamilton est plus qu'une comédie musicale, c'est une expérience immersive qui transporte le public dans l'effervescence de l'histoire américaine. Avec un mélange innovant de musique hip-hop, jazz, R&B et Broadway, Hamilton raconte l'histoire du père fondateur Alexander Hamilton de manière actuelle et captivante, une histoire de pouvoir, de politique, et de la passion qui a façonné une nation.
 
@@ -64,16 +64,12 @@ Nous vous invitons à nous rejoindre pour célébrer l'art, l'histoire et le gé
         <button class="carousel-button next">Suivant</button>
     </div>
 
-    <p>biuezgkqhjvdhizhd</p>
+    <p class = "texteintro">Vous avez été captivé par les chansons, maintenant préparez-vous à être complètement emporté par la magie visuelle et l'énergie vibrante de "Hamilton". Nous sommes ravis de partager avec vous la bande-annonce officielle de la comédie musicale, une fenêtre sur le monde éblouissant que nous avons créé.</p>
+
 <div class = trailer>
     <iframe width="919" height="517" src="https://www.youtube.com/embed/DSCKfXpAGHc" title="Hamilton | Official Trailer | Disney+" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
 </div>    
 
 
-        <a href="faq.php">Aller à la FAQ</a>
-
-    <footer>
-    </footer>
 </body>
 </html>
