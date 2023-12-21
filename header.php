@@ -4,10 +4,9 @@
 <script src="javascripts/header.js" defer></script>
 
 <header>
-
+    <span class="burger_menu burger_menu_void"></span>
     <span id="left-header">
         <a href="/">Accueil</a>
-        <a href="/spectacle">Spectacle</a>
         <a href="/samc">SAMC</a>
     </span>
     <img src="img/logo1.webp" alt="logo">
@@ -25,7 +24,9 @@
             </div>
         </span>
     </span>
-
+    <span class="burger_menu">
+        <input id="burger_menu_checkbox" type="checkbox">
+    </span>
 </header>
 
 <div id="connection_modal-background">

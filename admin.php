@@ -1,9 +1,12 @@
 <?php
 
+// identifiant: admin
+// mot de passe: authadmin
+
 require_once __DIR__ . '/private/db_gestion/DB.php';
 
 if(isset($_SERVER['PHP_AUTH_USER']) && isset($_SERVER['PHP_AUTH_PW'])){
-    if((strcmp($_SERVER['PHP_AUTH_USER'], "admin") == 0) && (strcmp($_SERVER['PHP_AUTH_PW'], "authadmin") == 0)) {
+    if((strcmp($_SERVER['PHP_AUTH_USER'],"admin") == 0) && (strcmp(hash('md2',$_SERVER['PHP_AUTH_PW']),'7f0d32e4243373a23649eb2f66e492ee') == 0)) {
         header('WWW-Authenticate: Basic realm="admin"');
         header('HTTP/1.0 200 Unauthorized');
     }
