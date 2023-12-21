@@ -1,87 +1,97 @@
-h1{
+h1 {
     display: flex;
     justify-content: center;
 }
 
 .imageindex {
-    margin: 0; /* Retire les marges par défaut de la figure */
-    height: 100vh; /* Assure que la figure prend toute la hauteur de la fenêtre de visualisation */
+    margin: 0;
+    height: 100vh;
     display: flex;
-    flex-direction: column; /* Organise le contenu de la figure en colonnes */
-    justify-content: center; /* Centre verticalement */
-    align-items: center; /* Centre horizontalement */
-    position: relative; /* Positionne la légende de manière absolue par rapport à la figure */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
 }
 
 .imageindex img {
-    width: 100vw; /* Prend toute la largeur de la fenêtre de visualisation */
-    height: 100vh; /* Prend toute la hauteur de la fenêtre de visualisation */
-    object-fit: cover; /* Assure que l'image couvre la figure sans perdre ses proportions */
-    position: absolute; /* Positionne l'image absolument pour qu'elle soit derrière le texte */
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: absolute;
     top: 0;
     left: 0;
-    z-index: -1; /* Place l'image derrière le texte de la légende */
+    z-index: -1;
 }
 
 figure.imageindex figcaption {
-    position: absolute; /* Positionne le texte sur l'image */
-    bottom: 10%; /* Place le texte à 10% du bas de l'image */
-    left: 50%; /* Centre le texte horizontalement */
-    transform: translateX(-50%); /* Assure que le texte est centré par rapport à son propre centre */
-    color: white; /* Change la couleur du texte pour une meilleure visibilité */
-    font-size: 2em; /* Agrandit le texte pour qu'il soit lisible */
-    text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.7); /* Ajoute une ombre pour améliorer la lisibilité sur des images claires */
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 2em;
+    text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.7);
 }
 
 .texteintro {
     text-align: center;
     width: 80%;
-    justify-content: center;
-    align-items: center;
-    display :block;
-    margin:0 auto;
-    margin-top: 3em;
-    margin-bottom: 2em;
-    font-size: 1.3em;
+    margin: 3em auto 2em;
+    font-size: 1.2em; /* Ajusté pour une meilleure lisibilité */
+}
+
+@media (max-width: 768px) {
+    .texteintro {
+        width: 95%;
+        font-size: 0.9em; /* Plus petite sur les écrans mobiles */
+    }
+
+    h1, .carousel-button, figcaption {
+        font-size: 0.9em; /* Ajuste la taille de la police pour les petits écrans */
+    }
+
+    .carousel-slide {
+        width: 150px; /* Taille réduite pour les diapositives sur les petits écrans */
+        height: 150px;
+    }
 }
 
 .carousel {
     overflow: hidden;
     position: relative;
-    width: 66%; 
+    width: 66%;
     display: flex;
-    justify-content: center; /* centre les éléments horizontalement */
-    align-items: center; /* centre les éléments verticalement */
+    justify-content: center;
+    align-items: center;
     margin: 0 auto;
 }
 
 .carousel-track-container {
     display: flex;
     flex-wrap: nowrap;
-    overflow: hidden; /* masque les éléments qui dépassent */
-    justify-content: center; /* aligne les éléments au centre du conteneur */
-    position: relative; /* positionne par rapport au carrousel */
+    overflow: hidden;
+    justify-content: center;
+    position: relative;
 }
 
 .carousel-track {
     display: flex;
     flex-wrap: nowrap;
     transition: transform 0.5s ease-in-out;
-    justify-content: flex-start; /* aligne les éléments au début du carrousel */
+    justify-content: flex-start;
 }
 
 .carousel-slide {
-    flex: 0 0 auto; /* les éléments ne grandissent pas, ne rétrécissent pas et sont basés sur la largeur automatique */
-    width: 200px; /* largeur de chaque slide */
-    height: 200px; /* hauteur pour un cercle parfait */
+    flex: 0 0 auto;
+    width: 200px;
+    height: 200px;
     margin: 15px;
-    border-radius: 50%; /* pour rendre le slide rond */
+    border-radius: 50%;
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
 
 .carousel-button {
     position: absolute;
@@ -102,12 +112,15 @@ figure.imageindex figcaption {
     right: 10px;
 }
 
+.trailer iframe {
+    margin :0 auto;
+    justify-content: center;
+}
+
 .trailer {
-    display: flex;
     justify-content: center;
     margin-bottom: 5em;
 }
-
 
 
 
