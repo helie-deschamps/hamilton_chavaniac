@@ -3,6 +3,17 @@ margin-left: 20%;
 margin-right:20% ;
 }
 
+.logosamc {
+    text-align: center; /* Centrez le contenu dans le conteneur */
+}
+
+.logosamc img {
+    width: 200px;
+    height: auto;
+    display: block; /* Ajustez l'image pour être un bloc, pour éviter des problèmes de marge */
+    margin: 0 auto; /* Centrez horizontalement l'image à l'intérieur de son conteneur */
+}
+
 .presentation,
 .projet,
 .financement,
