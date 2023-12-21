@@ -76,6 +76,9 @@ header a {
     overflow: auto;
     background-color: rgba(0,0,0,0.4);
 }
+#connection_modal-background p {
+    display: none;
+}
 #connection_modal {
     position: fixed;
     width: 50vw;
@@ -303,6 +306,40 @@ header a {
     }
 }
 
+@media (max-width: 1085px) {
+    #connection_modal-background {
+        position: fixed;
+        display: inline;
+        background: black;
+        z-index: 12;
+        height: fit-content;
+        width: fit-content;
+        padding: .5em 1em;
+        border-radius: 1em;
+        left: 50%;
+        top: 2em;
+        transform: translate(-50%, 0);
+    }
+    #connection_modal-background p {
+        display: inline;
+    }
+    #connection_modal {
+        width: 100vw;
+        min-height: 100vh;
+        max-height: 100vh;
+        overflow: scroll;
+        left: 0;
+        top: 0;
+        transform: translate(0, 0);
+        border-radius: 0;
+        padding: 0;
+        border: none;
+    }
+    #forms-conner, #connection_infos {
+        flex-direction: column;
+        margin: 3em 10vw;
+    }
+}
 
 
 
