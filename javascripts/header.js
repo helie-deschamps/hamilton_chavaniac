@@ -108,3 +108,13 @@ for(i=1;i<9;i++){
     allIconsChoice[i] = document.getElementById(`icone-choice-${i}`)
     allIconsChoice[i].addEventListener("click",changeIconeChoice.bind(null,i))
 }
+
+/* responsif */
+document.getElementById("burger_menu_checkbox").addEventListener("click", function(){
+    if(this.checked){
+        document.getElementsByTagName('header')[0].classList.add("full-displayed")
+    }
+    else{
+        document.getElementsByTagName('header')[0].classList.remove("full-displayed")
+    }
+})

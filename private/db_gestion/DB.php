@@ -127,7 +127,8 @@ class DB
      *
      * @return User|null Retourne un objet User si un est trové, sinon retourne null.
      */
-    public function findUserByCookie(string $cookie, bool $isSession = false) {
+    public function findUserByCookie(string $cookie, bool $isSession = false): ?User
+    {
         $req = $this->PDO->prepare(
             "SELECT UTILISATEUR.*
                     FROM UTILISATEUR
@@ -158,7 +159,8 @@ class DB
      *
      * @return Reservation|null Retourne un objet User si un est trové, sinon retourne null.
      */
-    public function findReservationFromUserID(string $userID) {
+    public function findReservationFromUserID(string $userID): ?Reservation
+    {
         $req = $this->PDO->prepare(
             "SELECT
     RESERVATION.DATE_DE_RESERVATION,
@@ -206,11 +208,13 @@ WHERE
         );
         $req->bindParam(':userID', $userID, PDO::PARAM_INT);
         // verrifie si une des requetes à retourné qq chose
-        $a = 0;
+        $req->execute();
         do {
-            $a += $req->rowCount();
+            if ($req->rowCount() > 0) {
+                return true;
+            }
         } while ($req->nextRowset());
-        return $a > 0;
+        return false;
     }
 
     /**
@@ -234,5 +238,24 @@ WHERE
             return $res;
         }
         else return null;
+    }
+
+    /**
+     * Permet de modifier l'email d'un utilisateur à partir de son ID
+     *
+     * @param int $userID L'identifiant de l'utilisateur à modifier
+     * @param string $newMail Le nouvel email de l'utilisateur
+     *
+     * @return bool Retourne true si la modification réussit, sinon retourne false.
+     */
+    public function editMailUserByID(int $userID, string $newMail): bool
+    {
+        $req = $this->PDO->prepare(
+            "UPDATE `UTILISATEUR` SET `EMAIL` = :newMail WHERE `UTILISATEUR`.`ID_UTILISATEUR` = :userID;"
+        );
+        $req->bindParam(':newMail', $newMail);
+        $req->bindParam(':userID', $userID);
+        $req->execute();
+        return $req->rowCount() > 0;
     }
 }

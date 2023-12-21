@@ -7,6 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hamilton, la comédie musicale</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="anim.js"></script>
     <link rel="stylesheet" type="text/css" href="styles/design_system.css">
     <link href="style.css" rel="stylesheet"/>
@@ -70,6 +71,7 @@ Nous vous invitons à nous rejoindre pour célébrer l'art, l'histoire et le gé
     <iframe width="919" height="517" src="https://www.youtube.com/embed/DSCKfXpAGHc" title="Hamilton | Official Trailer | Disney+" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>    
 
+<?php include_once"footer.php" ?>
 
 </body>
 </html>
