@@ -1,4 +1,3 @@
-
 <footer class="site-footer">
     <div class="footer-content">
         <div class="footer-section about">
@@ -12,14 +11,14 @@
         <div class="footer-section links">
             <h3>Liens Utiles</h3>
             <ul>
-                <li><a href="#">Accueil</a></li>
-                <li><a href="#">SAMC</a></li>
-                <li><a href="#">Billeterie</a></li>
+                <li><a href="index.php">Accueil</a></li>
+                <li><a href="samc.php">SAMC</a></li>
+                <li><a href="billetterie.php">Billeterie</a></li>
             </ul>
         </div>
         <div class="footer-section social">
             <h3>Notre FAQ</h3>
-            <a href="faq.html">Aller à la FAQ</a>
+            <a href="faq.php">Aller à la FAQ</a>
         </div>
     </div>
         
