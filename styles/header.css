@@ -6,11 +6,12 @@ header {
     font-weight: bold;
 }
 
+img {
+    vertical-align: middle;
+}
+
 header > img {
-    width: 6em;
-    position: absolute;
-    right: 50%;
-    transform: translate(50%, -.78em);
+    height: 4em;
 }
 
 header a {
@@ -55,6 +56,9 @@ header a {
     border: none;
     background: none;
     color: black;
+}
+#connexion div.data_user button:last-child {
+    padding-left: 0;
 }
 #connexion:hover, #connexion button:hover {
     cursor: pointer;
@@ -166,7 +170,7 @@ header a {
     text-align: center;
 }
 #forms-conner > form {
-    padding: 1.8em 2em;
+    padding: 0 2em;
     overflow: scroll;
     flex: 1;
 }
@@ -222,4 +226,32 @@ header a {
 
 #disconnected_button {
     margin-top: 1em;
+}
+
+.icone-choice {
+    height: 3em;
+    border-radius: 100%;
+    padding: .15em;
+}
+.icone-choice:hover {
+    cursor: pointer;
+}
+#icone-choice-div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 1em 0;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: .3em;
+}
+#iconea2 {
+    display: none;
+}
+#icon-selected {
+    flex: 1;
+    text-align: right;
+}
+.icone-choice-selected {
+    outline: .1em solid rgb(0, 0, 0);
 }

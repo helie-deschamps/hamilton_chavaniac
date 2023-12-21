@@ -1,12 +1,22 @@
+<?php
+    if(!isset($error)) {
+        if(isset($_GET["error"])) {
+            $error = $_GET["error"];
+        }
+        else {
+            $error = "404";
+        }
+    }
+?>
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
     <link rel="stylesheet" type="text/css" href="styles/design_system.css">
     <style>
         body {
             margin: 0;
             padding: 0;
-            background-image: url('img/page-404.png');
+            background-image: url('img/page-404.webp');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -28,7 +38,7 @@
 
     @media screen and (min-width: 1024px) {
         body {
-    background-image: url('img/page-404.png');
+    background-image: url('img/page-404.webp');
         }
     }
 
@@ -44,12 +54,13 @@
 
 
     </style>
+    <title>La Fayette est perdu !</title>
 </head>
 <?php
 include 'header.php'
 ?>
 <body>
     <div class="Page-erreur">
-        <h1 class="titre-erreur">404</h1>
+        <h1 class="titre-erreur"><?= $error ?></h1>
 </body>
 </html>

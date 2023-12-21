@@ -85,3 +85,26 @@ disconnection = function(){
     xhttp.send(null)
 }
 document.getElementById("disconnected_button").addEventListener("click", disconnection)
+
+// changement d'icone l'hors du choix de création de compte
+var allIconsChoice = []
+allIconsNames = [
+    "Alexander Hamilton",
+    "Aaron Burr",
+    "Marquis de Lafayette",
+    "Eliza Schuyler",
+    "Angelica Schuyler",
+    "George Washington",
+    "King George III",
+    "Thomas Jefferson",
+    ]
+function changeIconeChoice(iconID){
+    allIconsChoice.forEach(e => e.classList.remove('icone-choice-selected'))
+    allIconsChoice[iconID].classList.add('icone-choice-selected')
+    document.getElementById(`icon-selected`).innerHTML = allIconsNames[iconID-1]
+    document.getElementById(`iconea2`).value = iconID
+}
+for(i=1;i<9;i++){
+    allIconsChoice[i] = document.getElementById(`icone-choice-${i}`)
+    allIconsChoice[i].addEventListener("click",changeIconeChoice.bind(null,i))
+}
