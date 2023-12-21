@@ -1,4 +1,5 @@
 <?php
+// Récupération du code de l'erreur
     if(!isset($error)) {
         if(isset($_GET["error"])) {
             $error = $_GET["error"];
@@ -11,7 +12,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <link rel="stylesheet" type="text/css" href="styles/design_system.css">
+    <?php include_once "master_dependencies_head.php" ?>
     <style>
         body {
             margin: 0;
@@ -55,7 +56,7 @@
 
 
     </style>
-    <title>La Fayette est perdu !</title>
+    <title>La Fayette est perdu ! - Hamilton en France</title>
 </head>
 <?php
 include 'header.php'

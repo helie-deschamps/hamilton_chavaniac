@@ -4,13 +4,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hamilton, la comédie musicale</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="anim.js"></script>
-    <link rel="stylesheet" type="text/css" href="styles/design_system.css">
-    <link href="style.css" rel="stylesheet"/>
+    <?php include_once "master_dependencies_head.php" ?>
+    <title>Hamilton en France</title>
+    <script src="javascripts/anim.js"></script>
+    <link href="styles/style_homepage.css" rel="stylesheet"/>
 </head>
 <body>
    

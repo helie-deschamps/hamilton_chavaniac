@@ -2,15 +2,9 @@
 <html lang="fr">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAQ - Hamilton</title>
+    <?php include_once "master_dependencies_head.php" ?>
+    <title>FAQ - Hamilton en France</title>
     <style>
-    body {
-        background-color: rgb(32, 32, 32);
-        font-family: "afacad";
-        color: #ffffff;
-    }
 
     .faq {
         margin-top:5% ;

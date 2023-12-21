@@ -1,8 +1,3 @@
-<link rel="stylesheet" href="styles/fonts.css">
-<link rel="stylesheet" href="styles/header.css">
-
-<script src="javascripts/header.js" defer></script>
-
 <header>
     <span class="burger_menu burger_menu_void"></span>
     <span id="left-header">
@@ -121,7 +116,7 @@
             <?php $nameIcones = [
                 "Alexander Hamilton",
                 "Aaron Burr",
-                "Marquis de Lafayette",
+                "Marquis de La Fayette",
                 "Eliza Schuyler",
                 "Angelica Schuyler",
                 "George Washington",

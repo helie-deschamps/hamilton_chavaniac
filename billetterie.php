@@ -4,12 +4,10 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Billetterie</title>
-    <link rel="stylesheet" type="text/css" href="styles/design_system.css">
-    <link rel="stylesheet" type="text/css" href="styles/fonts.css">
+    <?php include_once "master_dependencies_head.php" ?>
+    <title>Billetterie - Hamilton en France</title>
     <link rel="stylesheet" type="text/css" href="styles/style_billetterie.css">
+    <script src="javascripts/billetterie.js" defer></script>
 </head>
 <?php
     include 'header.php'
@@ -106,7 +104,6 @@
         </div>
     </div>
 </div>
-<script src="billetterie.js"></script>
 
 <?php
     include_once 'footer.php'

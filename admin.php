@@ -46,7 +46,7 @@ if(isset($_GET["request"])) {
 <head>
     <meta charset="utf-8">
     <title>Titre de la page</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/style_homepage.css">
     <script src="javascripts/admin.js" defer></script>
 </head>
 <body>

@@ -93,7 +93,7 @@ var allIconsChoice = []
 allIconsNames = [
     "Alexander Hamilton",
     "Aaron Burr",
-    "Marquis de Lafayette",
+    "Marquis de La Fayette",
     "Eliza Schuyler",
     "Angelica Schuyler",
     "George Washington",
