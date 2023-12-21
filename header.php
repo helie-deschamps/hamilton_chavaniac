@@ -30,6 +30,7 @@
 </header>
 
 <div id="connection_modal-background">
+    <p>Fermer</p>
 </div>
 <dialog id="connection_modal" class="<?= isset($user) && $user ? "connected" : "disconnected" ?>">
     <div id="connection_infos">
