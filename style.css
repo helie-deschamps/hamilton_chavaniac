@@ -112,15 +112,21 @@ figure.imageindex figcaption {
     right: 10px;
 }
 
-.trailer iframe {
-    margin :0 auto;
-    justify-content: center;
-}
+
 
 .trailer {
+    display: flex;
     justify-content: center;
     margin-bottom: 5em;
+    
 }
 
-
-
+@media (max-width: 917px) {
+    .trailer {
+        width: 100vw;
+    }
+    .trailer iframe {
+        width: 100%;
+        height: calc( 100vw * 517 / 919 );
+    }
+}
