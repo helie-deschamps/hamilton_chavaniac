@@ -4,9 +4,9 @@
             <h3>À propos de Hamilton</h3>
             <p>Hamilton est une comédie musicale innovante mêlant histoire, musique et culture. Découvrez l'histoire jamais racontée d'Alexander Hamilton.</p>
             <h3>Mentions légales</h3>
-            <p>Hébergement : alwaysdata</p>
-            <p>Contact : hamilton.chavaniac@gmail.com</p>
-            <p>Siège social SAMC : 2 Rue Antoine Martin, 43000 Le Puy-en-Velay</p>
+            <p>Hébergement : <a href="https://www.alwaysdata.com/fr/" target="_blank">Alwaysdata</a></p>
+            <p>Contact : <a href="mailto:contact@hamilton-samc.fr">contact@hamilton-samc.fr</a></p>
+            <p>Le site est maintenu par la SAMC, dont le siège social est situé au 2 Rue Antoine Martin, 43000 Le Puy-en-Velay</p>
         </div>
         <div class="footer-section links">
             <h3>Liens Utiles</h3>
@@ -18,7 +18,7 @@
         </div>
         <div class="footer-section social">
             <h3>Notre FAQ</h3>
-            <a href="faq.php">Aller à la FAQ</a>
+            <a href="faq">Aller à la FAQ</a>
         </div>
     </div>
         

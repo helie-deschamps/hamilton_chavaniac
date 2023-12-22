@@ -4,7 +4,7 @@
         <a href="/">Accueil</a>
         <a href="/samc">SAMC</a>
     </span>
-    <img src="img/logo1.webp" alt="logo">
+    <a href="/"><img src="img/logo1.webp" alt="logo"></a>
     <span id="right-header">
         <a href="/billetterie">Billeterie</a>
         <span id="connexion" class="<?= isset($user) && $user ? "connected" : "disconnected" ?>">
@@ -94,7 +94,7 @@
             <p>Un problème, contactez nous à l’adresse : <a href="mailto:contact@hamilton-samc.fr">contact@hamilton-samc.fr</a></p>
         </form>
         <form id="form-create-acc" method="post">
-            <h4>Je shouaite créer un compte</h4>
+            <h4>Je souhaite créer un compte</h4>
             <div>
                 <label for="emaila2">E-mail</label>
                 <input id="emaila2" type="email" name="email" placeholder="Mon addresse e-mail" required>

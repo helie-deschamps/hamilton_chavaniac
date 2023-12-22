@@ -2,10 +2,16 @@
 include_once __DIR__ . '/private/authentication_systeme/try_auto_connection.php';
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <?php include_once "master_dependencies_head.php" ?>
-    <title>Hamilton en France</title>
+    <title><?= $title ?></title>
+    <meta name="description" content="Découvrez l'événement musical incontournable de l'année : la première représentation de la comédie musicale « Hamilton » en France, au prestigieux Château La Fayette. Présentée avec passion par la Société des Amis du Musée Crozatier, cette soirée promet une expérience unique mêlant histoire, musique et spectacle. Réservez vos places dès maintenant pour une soirée mémorable où la magie du théâtre rencontre le charme du patrimoine français.">
+    <meta property="og:title" content="<?= $title ?>">
+    <meta property="og:description" content="Découvrez l'événement musical incontournable de l'année : la première représentation de la comédie musicale « Hamilton » en France, au prestigieux Château La Fayette.">
+    <meta property="og:url" content="https://hamilton.helie.me/">
+    <meta name="twitter:title" content="<?= $title ?>">
+    <meta name="twitter:description" content="Découvrez l'événement musical incontournable de l'année : la première représentation de la comédie musicale « Hamilton » en France, au prestigieux Château La Fayette.">
     <script src="javascripts/anim.js"></script>
     <link href="styles/style_homepage.css" rel="stylesheet"/>
 </head>

@@ -361,6 +361,9 @@ header a {
     padding: 40px 0;
     font-size: 14px;
 }
+.site-footer a {
+    color: white;
+}
 
 .footer-content {
     display: flex;
