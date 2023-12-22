@@ -19,8 +19,5 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Hamilton, la comédie musicale en France">
 <meta property="og:locale" content="fr_FR">
-<?php
-//<meta property="og:image" content="URL de l'image à afficher">
-//<meta name="twitter:card" content="summary_large_image">
-//<meta name="twitter:image" content="https://hamilton.helie.me/img/rs/">
-?>
+<meta property="og:image" content="https://hamilton.helie.me/img/rs/image_rs.png">
+<meta name="twitter:image" content="https://hamilton.helie.me/img/rs/image_rs_twitter.png">
