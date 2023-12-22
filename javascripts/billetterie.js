@@ -46,7 +46,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
         let xhr = new XMLHttpRequest()
         xhr.addEventListener('readystatechange', function() {
             if (xhr.readyState === XMLHttpRequest.DONE) {
-                console.log(xhr.responseText)
                 if (xhr.responseText === "1") {
                     pushNotif(`${quantity} billet${quantity>1?"s":""} ajouté${quantity>1?"s":""} à votre réservation !`)
                     updateTableauPrix()

@@ -27,7 +27,7 @@ include_once __DIR__ . '/private/authentication_systeme/try_auto_connection.php'
         }
         @font-face {
             font-family: 'HOMINIS';
-            src: url('fonts/HOMINIS.woff') format('woff');
+            src: url('/fonts/HOMINIS.woff') format('woff');
         }
 
         .titre-erreur {

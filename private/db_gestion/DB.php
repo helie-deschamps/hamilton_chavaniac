@@ -8,6 +8,7 @@ class DB
     private static $instance;
     private PDO $PDO;
     private function __construct() {
+
         $host = getenv('HOST_DB');
         $dbname = getenv('NAME_DB');
 
@@ -325,7 +326,3 @@ SELECT `ID_RESERVATION` FROM `RESERVATION` WHERE `ID_UTILISATEUR` = :userID;"
         return $req->rowCount() > 0;
     }
 }
-
-// test de la fonction addTicketToAccount
-$db = DB::getInstance();
-$db->addTicketToAccount(1, 987.0, "36");

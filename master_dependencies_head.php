@@ -22,5 +22,5 @@
 <?php
 //<meta property="og:image" content="URL de l'image à afficher">
 //<meta name="twitter:card" content="summary_large_image">
-//<meta name="twitter:image" content="URL de l'image à afficher">
+//<meta name="twitter:image" content="https://hamilton.helie.me/img/rs/">
 ?>

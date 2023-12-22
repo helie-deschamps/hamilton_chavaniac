@@ -65,13 +65,13 @@ class AuthSystem
     public function loginWithEmailPassword(string $email, string $password, bool $cookieAccepted = false): ?User {
         $user = $this->db->findUserByPassword($email, $password);
 
-        if($cookieAccepted && $user != null) {
-            $cookie = $this->db->addCookie($user);
-            setcookie("conncusr", $cookie, time()+395*24*60*60); // 395 jours
-        }
-        else if($user != null){
+        if($user != null){
             $cookie = $this->db->addCookie($user, true);
             $_SESSION["connsessco"]=$cookie;
+            if($cookieAccepted) {
+                $cookie = $this->db->addCookie($user);
+                setcookie("conncusr", $cookie, time()+395*24*60*60); // 395 jours
+            }
         }
 
         return $user;
