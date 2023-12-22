@@ -39,8 +39,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
 
     addTicketToAccount = (price, quantity) => {
-        if(user.id === undefined || user.id === null) {
+        if(typeof user == 'undefined' || user.id == null) {
             pushNotif(`Connectez vous pour ajouter des billets a votre panier !`, true)
+            return
         }
         let xhr = new XMLHttpRequest()
         xhr.addEventListener('readystatechange', function() {

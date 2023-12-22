@@ -62,7 +62,8 @@ function submitConnectForm(formData) {
     xhttp.send(formData)
 }
 
-connection = function(user){
+connection = function(user_){
+    user = user_
     buttonConnection.classList.add('connected')
     buttonConnection.classList.remove('disconnected')
     modal.classList.add('connected')

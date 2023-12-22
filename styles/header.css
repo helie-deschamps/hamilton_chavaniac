@@ -199,13 +199,15 @@ header a {
     padding: 0;
 }
 
+#ci_tableau_prix {
+    margin: .7em 0 .7em 2em;
+}
 #ci_tableau_prix div {
     display: flex;
     flex-direction: row;
     align-items: stretch;
     justify-content: stretch;
     width: 100%;
-    margin: .7em 0;
 }
 .ci_tp_title, .ci_tp_quantity {
     width: fit-content;

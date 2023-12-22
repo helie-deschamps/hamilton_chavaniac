@@ -64,8 +64,8 @@
                         <p class="ci_tp_quantity"><?= $user->reservation->countParticipants($prix[0]) ?></p>
                     </div>
                 <?php endif; endforeach;?>
+                <p class="ci_total">Total due : <b id="price-total"><?= $user->reservation->prixTotal() ?></b>€</p>
             </div>
-            <p class="ci_total">Total due : <b id="price-total"><?= $user->reservation->prixTotal() ?></b>€</p>
         <?php else:?>
             <div id="ci_tableau_prix">
                 <a href="billetterie"><button>Précomander mes billets</button></a>

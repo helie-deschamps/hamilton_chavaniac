@@ -91,38 +91,13 @@ include "header.php";
             <img src="img/financement2.webp" alt="Chateau La Fayette">
             <img src="img/financement3.webp" alt="Chateau La Fayette">
         </div>
-        <h3>Cagnotte</h3>
     </div>
-    <div id="progress-container">
-        <div id="progress-bar">
-            <div id="progress"></div>
-        </div>
-        <div id="amount-text">0 €</div>
-
-        <script>
-        //script cagnotte
-
-        function updateProgressBar(amount, maxAmount) {
-            const progress = document.getElementById('progress');
-            const amountText = document.getElementById('amount-text');
-
-            const percentage = (amount / maxAmount) * 100;
-            progress.style.setProperty('--progress-width', percentage + '%');
-
-            amountText.textContent = amount + ' €';
-        }
-
-        // Exemple d'utilisation : Mettez à jour la barre de progression avec le montant actuel de la cagnotte
-        const currentAmount = 250; // Montant actuel de la cagnotte en euros
-        const maxAmount = 1000; // Montant maximum de la cagnotte en euros
-        updateProgressBar(currentAmount, maxAmount);
-        </script>
 
 
 
+    <footer><?php include_once"footer.php" ?>
+    </footer>
 </body>
 
-<footer><?php include_once"footer.php" ?>
-</footer>
 
 </html>
