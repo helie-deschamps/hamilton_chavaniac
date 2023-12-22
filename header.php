@@ -4,7 +4,7 @@
         <a href="/">Accueil</a>
         <a href="/samc">SAMC</a>
     </span>
-    <a href="/"><img src="img/logo1.webp" alt="logo"></a>
+    <a class="link_logo_header" href="/"><img src="/img/logo1.webp" alt="logo"></a>
     <span id="right-header">
         <a href="/billetterie">Billeterie</a>
         <span id="connexion" class="<?= isset($user) && $user ? "connected" : "disconnected" ?>">
