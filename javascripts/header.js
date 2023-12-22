@@ -130,7 +130,6 @@ updateTableauPrix = function(){
         if (xhttp.status >= 200 && xhttp.status < 300) {
             let rep = xhttp.responseText
             try {
-                console.log(document.getElementById("ci_tableau_prix"))
                 document.getElementById("ci_tableau_prix").innerHTML = rep
             } catch (e) {
                 pushNotif(`La connection a échoué. ${rep}`, true)

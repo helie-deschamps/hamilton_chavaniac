@@ -5,7 +5,13 @@ include_once __DIR__ . '/private/authentication_systeme/try_auto_connection.php'
 <html lang="fr">
 <head>
     <?php include_once "master_dependencies_head.php" ?>
-    <title>Billetterie - Hamilton en France</title>
+    <title>Billetterie - <?= $title ?></title>
+    <meta name="billetterie Hamilton" content="Réservez vos billets pour Hamilton au Château Chavanac Lafayette ! Vivez une expérience théâtrale unique dans un cadre historique. Ne manquez pas cette interprétation moderne de l'histoire d'Alexander Hamilton. Billets limités, réservez maintenant !">
+    <meta property="og:title" content="Billetterie d'<?= $title ?>">
+    <meta property="og:description" content="Réservez vos billets pour Hamilton au Château Chavanac Lafayette !">
+    <meta property="og:url" content="https://hamilton.helie.me/billetterie">
+    <meta name="twitter:title" content="Billetterie d'<?= $title ?>">
+    <meta name="twitter:description" content="Réservez vos billets pour Hamilton au Château Chavanac Lafayette !">
     <link rel="stylesheet" type="text/css" href="styles/style_billetterie.css">
     <script src="javascripts/billetterie.js" defer></script>
 </head>
@@ -23,8 +29,7 @@ include_once __DIR__ . '/private/authentication_systeme/try_auto_connection.php'
             <img src="img/billet-rencontre.webp" alt="billet-rencontre">
         </div>
         <div class="face-arriere">
-            <p>LIMITÉ À 20 PLACES!<br>
-            Ce billet comprend une entrée prioritaire avec une rencontre des artistes à la fin du spectacle.<br>
+            <p>Ce billet comprend une entrée prioritaire avec une rencontre des artistes à la fin du spectacle.<br>
             Ceci est une prévente, aucun paiement en ligne ne peut être effectué. 
             Le paiement s’effectuera sur place le jour du spectacle.
             Le nombre de préventes disponibles correspond aux nombres de places totales pour l’évènement.<br>

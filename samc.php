@@ -6,7 +6,14 @@ include_once __DIR__ . '/private/authentication_systeme/try_auto_connection.php'
 
 <head>
 
-    <title>SAMC - Hamilton en France</title>
+    <title>SAMC - <?= $title ?></title>
+    <meta name="Présentation SAMC" content="Découvrez la SAMC, une association dédiée à la culture et à l'histoire, impliquée dans la rénovation du Château Lafayette. Apprenez-en plus sur nos missions et participez à notre projet de financement, soutenu par les bénéfices du spectacle 'Hamilton'. Rejoignez-nous pour préserver un patrimoine historique exceptionnel.">
+
+    <meta property="og:title" content="SAMC, l'organisateur de la première représentation d'Hamilton en France">
+    <meta property="og:description" content="Découvrez la SAMC, une association dédiée à la culture et à l'histoire, impliquée dans la rénovation du Château Lafayette, où a eu lieu la première représentation de la comédie musicale 'Hamilton' en France.">
+    <meta property="og:url" content="https://hamilton.helie.me/samc">
+    <meta name="twitter:title" content="SAMC, l'organisateur de la première représentation d'Hamilton en France">
+    <meta name="twitter:description" content="Découvrez la SAMC, une association dédiée à la culture et à l'histoire, impliquée dans la rénovation du Château Lafayette, où a eu lieu la première représentation de la comédie musicale 'Hamilton' en France.">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">

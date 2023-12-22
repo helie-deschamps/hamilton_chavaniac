@@ -13,12 +13,12 @@ include_once __DIR__ . '/private/authentication_systeme/try_auto_connection.php'
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <?php include_once "master_dependencies_head.php" ?>
+    <?php include_once __DIR__ . "/master_dependencies_head.php" ?>
     <style>
         body {
             margin: 0;
             padding: 0;
-            background-image: url('img/page-404.webp');
+            background-image: url('/img/page-404.webp');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -27,7 +27,7 @@ include_once __DIR__ . '/private/authentication_systeme/try_auto_connection.php'
         }
         @font-face {
             font-family: 'HOMINIS';
-            src: url('fonts/HOMINIS.woff') format('woff');
+            src: url('/fonts/HOMINIS.woff') format('woff');
         }
 
         .titre-erreur {
@@ -40,13 +40,13 @@ include_once __DIR__ . '/private/authentication_systeme/try_auto_connection.php'
 
     @media screen and (min-width: 1024px) {
         body {
-    background-image: url('img/page-404.webp');
+    background-image: url('/img/page-404.webp');
         }
     }
 
     @media screen and (max-width: 1023px) {
         body {
-    background-image: url('img/page-404_mobile.png');
+    background-image: url('/img/page-404_mobile.png');
         }
 
         .titre-erreur {
@@ -57,7 +57,8 @@ include_once __DIR__ . '/private/authentication_systeme/try_auto_connection.php'
 
 
     </style>
-    <title>La Fayette est perdu ! - Hamilton en France</title>
+    <title>La Fayette est perdu ! - <?= $title ?></title>
+    <meta name="Vous vous êtes perdus" content="Les acteurs sont en train de répeter, vous les retrouverez très vite sur scène.">
 </head>
 <?php
 include 'header.php'

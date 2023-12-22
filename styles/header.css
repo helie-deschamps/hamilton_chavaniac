@@ -10,11 +10,11 @@ img {
     vertical-align: middle;
 }
 
-header > img {
+header > a > img {
     height: 4em;
 }
 
-header a {
+header a:not(.link_logo_header) {
     color: rgb(240, 195, 0);
     text-decoration: none;
     border-radius: 2em;
@@ -81,13 +81,11 @@ header a {
 #connection_modal {
     position: fixed;
     width: 838px;
-    max-height: 85vh;
     margin: 0;
     z-index: 5;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    overflow: auto;
     background: rgb(255, 253, 238);
     padding: 2em;
     border-radius: .5em;
@@ -360,6 +358,9 @@ header a {
     color: white;
     padding: 40px 0;
     font-size: 14px;
+}
+.site-footer a {
+    color: white;
 }
 
 .footer-content {
